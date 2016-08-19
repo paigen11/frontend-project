@@ -1,8 +1,11 @@
-mapboxgl.accessToken = 'pk.eyJ1IjoiZHBpcmllOTY3OSIsImEiOiJjaXJ6YjFncDQwMGoyMnptZjUyamtoY3NjIn0.T5njA0ENexvGEur55YNWog';
+
+mapboxgl.accessToken = 'pk.eyJ1IjoicGFpZ2VuMTEiLCJhIjoiY2lyemJlZ3A0MDBqZTJ5cGs5ZHJicjI2YyJ9.2-dZqM-k2obDN47BpWq5Lw';
+
 var bounds = [
-    [-84.549407959,33.5471175795], // Southwest coordinates
+    [-84.579407959,33.5471175795], // Southwest coordinates
     [-84.1703796387,33.9775311374]  // Northeast coordinates
 ];
+
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/dark-v9',
@@ -64,22 +67,17 @@ map.on('load', function() {
         },
         "filter": ["!=", "cluster", true]
     }, 'waterway-label');
-});
 
 
+    //not working yet, but click functionality works
+   map.on('click', function(e) {
 
-function coordGenerator()
+    var latitude = e.latlng.lat;
+    var longitude = e.latlng.lng;
 
+    console.log(latitude + " - " + longitude)
 
-
-
-
-
-
-
-
+    });
 
 
-
-
-
+})
