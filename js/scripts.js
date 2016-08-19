@@ -14,6 +14,8 @@ var map = new mapboxgl.Map({
     // maxBounds: bounds // Sets bounds as max
 });
 
+var myMap = L.map('map').setView([-84.3733132, 33.8486731], 9);
+
 map.on('load', function() {
 
     // Add a new source from our GeoJSON data and set the
@@ -70,12 +72,12 @@ map.on('load', function() {
 
 
     //not working yet, but click functionality works
-    map.on('click', function(e) {
-        var latitude = e.latlng.lat;
-        var longitude = e.latlng.lng;
+    // map.on('click', function(e) {
+    //     var latitude = e.latlng.lat;
+    //     var longitude = e.latlng.lng;
 
-    console.log(latitude + " - " + longitude)
-    });
+    // console.log(latitude + " - " + longitude)
+    // });
 
     addMarker();
 
@@ -95,5 +97,16 @@ map.on('load', function() {
             }, 'waterway-label');
         }, 5000);
     }
+
+    var popup = L.popup();
+
+    function onMapClick(e) {
+        popup
+            .setLatLng(e.latlng)
+            .setContent("You clicked the map at " + e.latlng.toString())
+            .openOn(myMap);
+            }
+
+    myMap.on('click', onMapClick);
 
 })
