@@ -1,0 +1,97 @@
+.menu_opener {
+  display: none;
+}
+.menu_opener:checked ~ .link_one {
+  top: 65px;
+}
+.menu_opener:checked ~ .link_two {
+  left: 385px;
+}
+.menu_opener:checked ~ .link_three {
+  top: 385px;
+}
+.menu_opener:checked ~ .link_four {
+  left: 65px;
+}
+.menu_opener:checked ~ .barre_hamburger {
+  opacity: 0;
+}
+.menu_opener:checked ~ .menu_opener_label:after {
+  transform: rotate(45deg);
+  top: 70px;
+}
+.menu_opener:checked ~ .menu_opener_label:before {
+  transform: rotate(-45deg);
+  top: 70px;
+}
+.menu_opener_label {
+  background: #f1c40f;
+  width: 150px;
+  height: 150px;
+  display: block;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  top: 200px;
+  left: 200px;
+  z-index: 10;
+}
+.menu_opener_label:after {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  background: #000;
+  content: "";
+  width: 50px;
+  height: 10px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.menu_opener_label:before {
+  position: absolute;
+  top: 90px;
+  left: 50px;
+  background: #000;
+  content: "";
+  width: 50px;
+  height: 10px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.barre_hamburger {
+  width: 50px;
+  height: 10px;
+  position: absolute;
+  top: 270px;
+  left: 250px;
+  background: #000;
+  z-index: 20;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.link_general {
+  width: 100px;
+  height: 100px;
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  top: 225px;
+  left: 225px;
+  background: #ecf0f1;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.link_one {
+  ...
+}
+.link_two {
+  ...
+}
+.link_three {
+  ...
+}
+.link_four {
+  ...
+}
+
