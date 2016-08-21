@@ -94,4 +94,8 @@
 .link_four {
   ...
 }
+div.inside_content{
+  text-align: center;
+  margin:  auto;
+}
 
