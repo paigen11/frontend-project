@@ -51,6 +51,9 @@ function stop(){
 	clearInterval(generation);
 }
 
+var count = 0;
+var scoreboard = document.getElementById('scoreboard');
+scoreboard.innerHTML = count;
 function generateMarkers() {
     var tempPoint = generate(point[0], point[1], .4);
     marker = L.marker(tempPoint, {icon: myIcon})
@@ -62,6 +65,7 @@ function generateMarkers() {
             if(index > -1){
                 markerList.splice(index, 1);
             }
+            count++;
         })
     //push marker coords to an array    
     markerList.push(marker);
