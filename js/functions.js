@@ -43,4 +43,5 @@ function generateSwell(coord, interval){
 	}else if(whichWay == 2){
 		newCoord = coord - randomCoord;
 	}
+	return newCoord;
 }
