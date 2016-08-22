@@ -9,9 +9,10 @@ var map = L.map('map', {
     //     [33.7993178, -84.328008],
     //     [33.8486731, -84.3733132]
     // ],
-    minZoom: 9
-
+    minZoom: 9,
 })
+
+map.doubleClickZoom.disable(); 
 
 //add dark Mapbox styled background
 L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoicGFpZ2VuMTEiLCJhIjoiY2lyemJlZ3A0MDBqZTJ5cGs5ZHJicjI2YyJ9.2-dZqM-k2obDN47BpWq5Lw')
