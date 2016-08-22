@@ -32,6 +32,10 @@ function generateMarkers() {
     new L.marker(tempPoint).addTo(map);
 }
 
-setInterval(generateMarkers, 1000);
+var generation = setInterval(generateMarkers, 1000);
+
+function stop(){
+	clearInterval(generation);
+}
 
 
