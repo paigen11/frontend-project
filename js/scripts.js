@@ -17,11 +17,15 @@ var map = L.map('map', {
 L.mapbox.styleLayer('mapbox://styles/mapbox/dark-v9').addTo(map);
 
 function onMapClick(e) {
-    popup
-        .setLatLng(e.latlng)
-        .setContent("You clicked the map at " + e.latlng.toString())
-        .openOn(map);
-        }
+    // popup
+    //     .setLatLng(e.latlng)
+    //     .setContent("You clicked the map at " + e.latlng.toString())
+    //     .openOn(map);
+    clickArray.push(e.latlng);
+    console.log(clickArray);
+    console.log(e.latlng)
+    L.circle(e.latlng, 200).addTo(map);
+}
 
 map.on('click', onMapClick);
 var popup = L.popup();  
