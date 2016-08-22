@@ -13,17 +13,14 @@ function generate(west, south, interval){
 	var randomCoord = Math.random() * interval;
 	// the array to hold the coordinates
 	var coord = [];
-
-
-	//we added the randomCoord so the point moves north from the furthest south point
- 	var newSC = south + randomCoord;
- 	//add south/north coord in array second since it is referenced after west/east
-
-	coord.push(newSC);
 	//we added the randomCoord so the point moves east from the futhest west point
 	var newWC = west + randomCoord;
 	//add west/east coord in array first since it is referenced first.
 	coord.push(newWC);
+	//we added the randomCoord so the point moves north from the furthest south point
+ 	var newSC = south + randomCoord;
+ 	//add south/north coord in array second since it is referenced after west/east
+	coord.push(newSC);
 	//return the array coordinate to be pushed to the geoJson object.
 	console.log(coord);
 	return coord;
