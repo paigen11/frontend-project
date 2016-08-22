@@ -34,10 +34,10 @@ var myIcon = L.icon({iconUrl: 'img/monster.png', className: 'my-div-icon'});
 
 function generateMarkers() {
     var tempPoint = generate(point[0], point[1], .4);
-    new L.marker(tempPoint, {icon: myIcon})
+    marker = L.marker(tempPoint, {icon: myIcon})
         .addTo(map)
         .on("click", function(e){
-            console.log("click")
+            map.removeLayer(this);
         })
 }
 
