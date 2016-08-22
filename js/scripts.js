@@ -40,10 +40,19 @@ function generateMarkers() {
         .addTo(map)
         .on("click", function(e){
             map.removeLayer(this);
+            //remove element from markerList array
+            var index = markerList.indexOf(this);
+            if(index > -1){
+                markerList.splice(index, 1);
+            }
         })
+    //push marker coords to an array    
     markerList.push(marker);
-    }    
-}
+    //if markerList is longer than X show test - this will eventually end the game when the player's overrun with zombies
+    if(markerList.length > 10){
+        console.log("test, test");
+    }
+}   
 
 var generation = setInterval(generateMarkers, 1000);
 
