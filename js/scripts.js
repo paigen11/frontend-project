@@ -27,10 +27,15 @@ function onMapClick(e) {
     var theCircle = L.circle(e.latlng, 2000).addTo(map);
     console.log(theCircle);
     theCircle;
-    for(var i = 0; i < array.length; i++){
-        if(i.distanceTo(e.latlng)  < 2000)     
+    function polyRemove(array){
+        for(var i = 0; i < array.length; i++){
+            if(array[i].distanceTo(e.latlng) < 2000){
+                map.removeLayer(array[i]);
+                markerList.splice(i, 1)
+            }  
+        }
     }
-
+    polyRemove(markerList);
 }
 
 map.on('click', onMapClick);
@@ -65,5 +70,4 @@ var generation = setInterval(generateMarkers, 1000);
 function stop(){
 	clearInterval(generation);
 }
-
 
