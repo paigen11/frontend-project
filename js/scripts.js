@@ -15,7 +15,8 @@ var map = L.map('map', {
     minZoom: 9,
 })
 
-map.doubleClickZoom.disable(); 
+map.doubleClickZoom.disable();
+map.dragging.disable();
 
 //add dark Mapbox styled background
 L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoicGFpZ2VuMTEiLCJhIjoiY2lyemJlZ3A0MDBqZTJ5cGs5ZHJicjI2YyJ9.2-dZqM-k2obDN47BpWq5Lw')
