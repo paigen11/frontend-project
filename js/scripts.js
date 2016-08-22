@@ -1,3 +1,6 @@
+
+
+
 // L.mapbox.accessToken = 'pk.eyJ1IjoiZXJpY2V0dGVuc29obiIsImEiOiJjaXJ6OHgzaWowMDdsMnRwa2lmM2MyMzlmIn0._EDAWnZWG_f4wwx5d46a_w';
 
 // create map
@@ -24,7 +27,8 @@ function onMapClick(e) {
     //     .setLatLng(e.latlng)
     //     .setContent("You clicked the map at " + e.latlng.toString())
     //     .openOn(map);
-    var circle = L.circle(e.latlng, 2000).addTo(map);
+    var circle = L.circle(e.latlng, 2000).setStyle({className: "pulseCustom"}).addTo(map)
+    
     areaEffect(circle)
 }
 

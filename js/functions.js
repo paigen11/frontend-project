@@ -83,6 +83,9 @@ function areaEffect(circle) {
 			markerList.splice(i, 1);
 		}
 	}
+	setTimeout(function() {
+		map.removeLayer(circle)
+	}, 1000)
 }
 
 function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
