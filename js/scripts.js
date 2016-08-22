@@ -24,7 +24,13 @@ function onMapClick(e) {
     //     .setContent("You clicked the map at " + e.latlng.toString())
     //     .openOn(map);
     console.log(e.latlng)
-    L.circle(e.latlng, 2000).addTo(map);
+    var theCircle = L.circle(e.latlng, 2000).addTo(map);
+    console.log(theCircle);
+    theCircle;
+    for(var i = 0; i < array.length; i++){
+        if(i.distanceTo(e.latlng)  < 2000)     
+    }
+
 }
 
 map.on('click', onMapClick);
