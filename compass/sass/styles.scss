@@ -20,3 +20,7 @@
 // @import "views/payment";
 // @import "views/account";
 
+.leaflet-marker-icon{
+	height: 20px;
+	transition: all 1s linear;
+}

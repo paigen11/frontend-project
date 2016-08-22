@@ -28,10 +28,11 @@ function onMapClick(e) {
 map.on('click', onMapClick);
 var popup = L.popup();  
 
+var myIcon = L.icon({iconUrl: 'img/monster.png', className: 'my-div-icon'});
 
 function generateMarkers() {
     var tempPoint = generate(point[0], point[1], .4);
-    new L.marker(tempPoint).addTo(map);
+    new L.marker(tempPoint, {icon: myIcon}).addTo(map);
 }
 
 var generation = setInterval(generateMarkers, 1000);
