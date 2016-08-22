@@ -2,44 +2,53 @@
   display: none;
 }
 .menu_opener:checked ~ .link_one {
-  top: 65px;
+  top: 150px;
 }
 .menu_opener:checked ~ .link_two {
-  left: 385px;
+  left: 345px;
 }
 .menu_opener:checked ~ .link_three {
-  top: 385px;
+  top: 345px;
 }
 .menu_opener:checked ~ .link_four {
-  left: 65px;
+  left: 150px;
 }
 .menu_opener:checked ~ .barre_hamburger {
   opacity: 0;
 }
 .menu_opener:checked ~ .menu_opener_label:after {
   transform: rotate(45deg);
-  top: 70px;
+  top: 33px;
+  left: 13px;
 }
 .menu_opener:checked ~ .menu_opener_label:before {
   transform: rotate(-45deg);
-  top: 70px;
+  top: 33px;
+  left: 13px;
+}
+.menu_opener:checked ~ .menu_opener_label{
+  width: 75px;
+  height: 75px;
+  top: 235.5px;
+  left: 235.5px;
 }
 .menu_opener_label {
   background: #f1c40f;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   display: block;
   cursor: pointer;
   border-radius: 50%;
   position: absolute;
-  top: 200px;
-  left: 200px;
+  top: 225px;
+  left: 225px;
   z-index: 10;
+  transition: all .4s ease;
 }
 .menu_opener_label:after {
   position: absolute;
-  top: 50px;
-  left: 50px;
+  top: 30px;
+  left: 25px;
   background: #000;
   content: "";
   width: 50px;
@@ -49,8 +58,8 @@
 }
 .menu_opener_label:before {
   position: absolute;
-  top: 90px;
-  left: 50px;
+  top: 60px;
+  left: 25px;
   background: #000;
   content: "";
   width: 50px;
@@ -71,14 +80,14 @@
 }
 
 .link_general {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   display: block;
   border-radius: 50%;
   position: absolute;
-  top: 225px;
-  left: 225px;
-  background: #ecf0f1;
+  top: 250px;
+  left: 250px;
+  background: #f1c40f;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
@@ -97,5 +106,12 @@
 div.inside_content{
   text-align: center;
   margin:  auto;
+  line-height: 50px;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  font-family: Arial;
 }
 
