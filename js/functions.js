@@ -65,7 +65,7 @@ function generateMarkers() {
             if(index > -1){
                 markerList.splice(index, 1);
             }
-            count++;
+            scoreboard.innerHTML++;
         })
     //push marker coords to an array    
     markerList.push(marker);
