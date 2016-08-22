@@ -43,7 +43,6 @@ function generateMarkers() {
         })
     markerList.push(marker);
     }    
-}
 
 var generation = setInterval(generateMarkers, 1000);
 
