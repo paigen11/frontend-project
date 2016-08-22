@@ -1,4 +1,4 @@
-L.mapbox.accessToken = 'pk.eyJ1IjoiZXJpY2V0dGVuc29obiIsImEiOiJjaXJ6OHgzaWowMDdsMnRwa2lmM2MyMzlmIn0._EDAWnZWG_f4wwx5d46a_w';
+// L.mapbox.accessToken = 'pk.eyJ1IjoiZXJpY2V0dGVuc29obiIsImEiOiJjaXJ6OHgzaWowMDdsMnRwa2lmM2MyMzlmIn0._EDAWnZWG_f4wwx5d46a_w';
 
 // create map
 var map = L.map('map', {
@@ -13,8 +13,10 @@ var map = L.map('map', {
 
 })
 
-//add mapbox styled background
-L.mapbox.styleLayer('mapbox://styles/mapbox/dark-v9').addTo(map);
+//add OSM styled background
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
 
 function onMapClick(e) {
     // popup
@@ -32,7 +34,11 @@ var myIcon = L.icon({iconUrl: 'img/monster.png', className: 'my-div-icon'});
 
 function generateMarkers() {
     var tempPoint = generate(point[0], point[1], .4);
-    new L.marker(tempPoint, {icon: myIcon}).addTo(map);
+    new L.marker(tempPoint, {icon: myIcon})
+        .addTo(map)
+        .on("click", function(e){
+            console.log("click")
+        })
 }
 
 var generation = setInterval(generateMarkers, 1000);
