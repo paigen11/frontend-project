@@ -27,7 +27,7 @@ function generate(south, west, interval){
 	//add west/east coord in array first since it is referenced first.
 	coord.push(newWC);
 	//return the array coordinate to be pushed to the geoJson object.
-	console.log(coord);
+	// console.log(coord);
 	return coord;
 }
 function generateSwell(coord, interval){

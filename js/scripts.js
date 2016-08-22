@@ -13,10 +13,10 @@ var map = L.map('map', {
 
 })
 
-//add OSM styled background
-L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
+//add dark Mapbox styled background
+L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoicGFpZ2VuMTEiLCJhIjoiY2lyemJlZ3A0MDBqZTJ5cGs5ZHJicjI2YyJ9.2-dZqM-k2obDN47BpWq5Lw')
+.addTo(map);
+
 
 function onMapClick(e) {
     // popup
@@ -32,6 +32,8 @@ var popup = L.popup();
 
 var myIcon = L.icon({iconUrl: 'img/monster.png', className: 'my-div-icon'});
 
+var markerList = [];
+
 function generateMarkers() {
     var tempPoint = generate(point[0], point[1], .4);
     marker = L.marker(tempPoint, {icon: myIcon})
@@ -39,6 +41,8 @@ function generateMarkers() {
         .on("click", function(e){
             map.removeLayer(this);
         })
+    markerList.push(marker);
+    }    
 }
 
 var generation = setInterval(generateMarkers, 1000);
