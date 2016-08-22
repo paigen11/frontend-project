@@ -30,6 +30,7 @@ function generate(south, west, interval){
 	// console.log(coord);
 	return coord;
 }
+
 function generateSwell(coord, interval){
 	//generates random variable based on interval to the coordinate
 	var randomCoord = Math.random() * interval;
@@ -46,3 +47,54 @@ function generateSwell(coord, interval){
 	return newCoord;
 }
 
+function stop(){
+	clearInterval(generation);
+}
+
+function generateMarkers() {
+    var tempPoint = generate(point[0], point[1], .4);
+    marker = L.marker(tempPoint, {icon: myIcon})
+        .addTo(map)
+        .on("click", function(e){
+            map.removeLayer(this);
+            //remove element from markerList array
+            var index = markerList.indexOf(this);
+            if(index > -1){
+                markerList.splice(index, 1);
+            }
+        })
+    //push marker coords to an array    
+    markerList.push(marker);
+    //if markerList is longer than X show test - this will eventually end the game when the player's overrun with zombies
+    if(markerList.length > 10){
+        console.log("test, test");
+    }
+}   
+
+function areaEffect(circle) {
+	for(i = 0; i < markerList.length; i++) {
+		if (getDistanceFromLatLonInKm(markerList[i]._latlng.lat, markerList[i]._latlng.lng, circle._latlng.lat, circle._latlng.lng) < 2){
+			console.log("target found!")
+			map.removeLayer(markerList[i])
+			markerList.splice(i, 1);
+		}
+	}
+}
+
+function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
+	var R = 6371; // Radius of the earth in km
+	var dLat = deg2rad(lat2-lat1);  // deg2rad below
+	var dLon = deg2rad(lon2-lon1); 
+	var a = 
+	Math.sin(dLat/2) * Math.sin(dLat/2) +
+	Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * 
+	Math.sin(dLon/2) * Math.sin(dLon/2)
+	; 
+	var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+	var d = R * c; // Distance in km
+	return d;
+}
+
+function deg2rad(deg) {
+	return deg * (Math.PI/180)
+}

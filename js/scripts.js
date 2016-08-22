@@ -23,19 +23,8 @@ function onMapClick(e) {
     //     .setLatLng(e.latlng)
     //     .setContent("You clicked the map at " + e.latlng.toString())
     //     .openOn(map);
-    console.log(e.latlng)
-    var theCircle = L.circle(e.latlng, 2000).addTo(map);
-    console.log(theCircle);
-    theCircle;
-    function polyRemove(array){
-        for(var i = 0; i < array.length; i++){
-            if(array[i].distanceTo(e.latlng) < 2000){
-                map.removeLayer(array[i]);
-                markerList.splice(i, 1)
-            }  
-        }
-    }
-    polyRemove(markerList);
+    var circle = L.circle(e.latlng, 2000).addTo(map);
+    areaEffect(circle)
 }
 
 map.on('click', onMapClick);
@@ -45,29 +34,8 @@ var myIcon = L.icon({iconUrl: 'img/monster.png', className: 'my-div-icon'});
 
 var markerList = [];
 
-function generateMarkers() {
-    var tempPoint = generate(point[0], point[1], .4);
-    marker = L.marker(tempPoint, {icon: myIcon})
-        .addTo(map)
-        .on("click", function(e){
-            map.removeLayer(this);
-            //remove element from markerList array
-            var index = markerList.indexOf(this);
-            if(index > -1){
-                markerList.splice(index, 1);
-            }
-        })
-    //push marker coords to an array    
-    markerList.push(marker);
-    //if markerList is longer than X show test - this will eventually end the game when the player's overrun with zombies
-    if(markerList.length > 10){
-        console.log("test, test");
-    }
-}   
-
 var generation = setInterval(generateMarkers, 1000);
 
-function stop(){
-	clearInterval(generation);
-}
+
+
 
