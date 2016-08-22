@@ -31,7 +31,7 @@ function generate(south, west, interval){
 	return coord;
 }
 function generateSwell(coord, interval){
-	//generates random variale based on interval to the coordinate
+	//generates random variable based on interval to the coordinate
 	var randomCoord = Math.random() * interval;
 	//holds the new lat or lng
 	var newCoord = 0;

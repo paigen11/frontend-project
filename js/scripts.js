@@ -21,8 +21,6 @@ function onMapClick(e) {
     //     .setLatLng(e.latlng)
     //     .setContent("You clicked the map at " + e.latlng.toString())
     //     .openOn(map);
-    clickArray.push(e.latlng);
-    console.log(clickArray);
     console.log(e.latlng)
     L.circle(e.latlng, 200).addTo(map);
 }
