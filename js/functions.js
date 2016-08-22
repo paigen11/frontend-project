@@ -5,26 +5,40 @@
 //swell interval => .0009
 //relocate variable => .4
 
-var point = [-85.579407959, 33.9775311374];
+// var point = [33.9775311374, -85.579407959];
+var point= [33.74604, -84.38873];
 
 
-function generate(west, south, interval){
-	//randomly generates a coordinate based on the interval passed
-	var randomCoord = Math.random() * interval;
+function generate(south, west, interval){
+	//randomly generates a coordinate based on the interval passed for west
+	var randomCoordWest = Math.random() * interval;
+	//randomly generates a coordinate based on the interval passed for south
+	var randomCoordSouth = Math.random() * interval;
 	// the array to hold the coordinates
 	var coord = [];
-	//we added the randomCoord so the point moves east from the futhest west point
-	var newWC = west + randomCoord;
-	//add west/east coord in array first since it is referenced first.
-	coord.push(newWC);
 	//we added the randomCoord so the point moves north from the furthest south point
- 	var newSC = south + randomCoord;
+ 	var newSC = south + randomCoordSouth;
  	//add south/north coord in array second since it is referenced after west/east
 	coord.push(newSC);
+	//we added the randomCoord so the point moves east from the futhest west point
+	var newWC = west + randomCoordWest;
+	//add west/east coord in array first since it is referenced first.
+	coord.push(newWC);
 	//return the array coordinate to be pushed to the geoJson object.
 	console.log(coord);
 	return coord;
 }
-
-// setTimeout(generate, 500, point[0], point[1], .0009);
-// setInterval(generate, 5000, point[0], point[1], .4);
+function generateSwell(coord, interval){
+	//generates random variale based on interval to the coordinate
+	var randomCoord = Math.random() * interval;
+	//holds the new lat or lng
+	var newCoord = 0;
+	//random check for whether to add or subtract
+	var whichWay = Math.ceil(Math.random()*2);
+	//determines whether we add or subtract the interval
+	if(whichWay == 1){
+		newCoord = coord + randomCoord;
+	}else if(whichWay == 2){
+		newCoord = coord - randomCoord;
+	}
+}
