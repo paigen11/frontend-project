@@ -6,7 +6,9 @@
 //relocate variable => .4
 
 // var point = [33.9775311374, -85.579407959];
-var point= [33.74604, -84.38873];
+// [-84.549407959,33.5471175795], // Southwest coordinates
+//     [-84.1703796387,33.9775311374]  // Northeast coordinates
+var point= [33.5471175795, -84.549407959];
 
 
 function generate(south, west, interval){
