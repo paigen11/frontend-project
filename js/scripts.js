@@ -1,8 +1,20 @@
 L.mapbox.accessToken = 'pk.eyJ1IjoiZXJpY2V0dGVuc29obiIsImEiOiJjaXJ6OHgzaWowMDdsMnRwa2lmM2MyMzlmIn0._EDAWnZWG_f4wwx5d46a_w';
 
-var map = L.map('map').setView([33.8486731,-84.3733132], 9);
+// create map
+var map = L.map('map', {
+    center: [33.73804, -84.38324],
+    zoom: 9,
+    // leave maxBounds commented out for now
+    // maxBounds: [
+    //     [33.7993178, -84.328008],
+    //     [33.8486731, -84.3733132]
+    // ],
+    minZoom: 9
 
-L.mapbox.styleLayer('mapbox://styles/mapbox/basic-v9').addTo(map);
+})
+
+//add mapbox styled background
+L.mapbox.styleLayer('mapbox://styles/mapbox/dark-v9').addTo(map);
 
 function onMapClick(e) {
     popup
