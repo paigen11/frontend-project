@@ -20,6 +20,17 @@
 // @import "views/payment";
 // @import "views/account";
 
+@font-face{
+    font-family: Zombie;
+    src: url('fonts/ZOMBIE.TTF');
+}
+
+h1, h2{
+    font-family: Zombie, arial;
+    text-align: center;
+}
+
+
 .leaflet-marker-icon{
 	height: 20px;
 	transition: all 1s linear;

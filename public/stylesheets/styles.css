@@ -1,67 +1,77 @@
-/* line 23, ../../compass/sass/styles.scss */
+@font-face {
+  font-family: Zombie;
+  src: url("fonts/ZOMBIE.TTF");
+}
+/* line 28, ../../compass/sass/styles.scss */
+h1, h2 {
+  font-family: Zombie, arial;
+  text-align: center;
+}
+
+/* line 34, ../../compass/sass/styles.scss */
 .leaflet-marker-icon {
   height: 20px;
   transition: all 1s linear;
 }
 
-/* line 28, ../../compass/sass/styles.scss */
+/* line 39, ../../compass/sass/styles.scss */
 .menu_goodies {
   z-index: 801;
   position: relative;
 }
 
-/* line 32, ../../compass/sass/styles.scss */
+/* line 43, ../../compass/sass/styles.scss */
 .menu_opener {
   display: none;
 }
 
-/* line 35, ../../compass/sass/styles.scss */
+/* line 46, ../../compass/sass/styles.scss */
 .menu_opener:checked ~ .link_one {
   top: 150px;
 }
 
-/* line 38, ../../compass/sass/styles.scss */
+/* line 49, ../../compass/sass/styles.scss */
 .menu_opener:checked ~ #scoreboard {
   opacity: 1;
   top: 300px;
   left: 150px;
 }
 
-/* line 43, ../../compass/sass/styles.scss */
+/* line 54, ../../compass/sass/styles.scss */
 .menu_opener:checked ~ .link_two {
   left: 345px;
 }
 
-/* line 46, ../../compass/sass/styles.scss */
+/* line 57, ../../compass/sass/styles.scss */
 .menu_opener:checked ~ .link_three {
   top: 345px;
 }
 
-/* line 49, ../../compass/sass/styles.scss */
+/* line 60, ../../compass/sass/styles.scss */
 .menu_opener:checked ~ .link_four {
   left: 150px;
 }
 
-/* line 52, ../../compass/sass/styles.scss */
+/* line 63, ../../compass/sass/styles.scss */
 .menu_opener:checked ~ .barre_hamburger {
   opacity: 0;
 }
 
-/* line 55, ../../compass/sass/styles.scss */
+/* line 66, ../../compass/sass/styles.scss */
 .menu_opener:checked ~ .menu_opener_label:after {
   transform: rotate(45deg);
   top: 33px;
   left: 13px;
 }
 
-/* line 60, ../../compass/sass/styles.scss */
+/* line 71, ../../compass/sass/styles.scss */
 .menu_opener:checked ~ .menu_opener_label:before {
   transform: rotate(-45deg);
   top: 33px;
   left: 13px;
 }
 
-/* line 65, ../../compass/sass/styles.scss */
+/* line 76, ../../compass/sass/styles.scss */
 .menu_opener:checked ~ .menu_opener_label {
   width: 75px;
   height: 75px;
@@ -69,7 +79,7 @@
   left: 235.5px;
 }
 
-/* line 71, ../../compass/sass/styles.scss */
+/* line 82, ../../compass/sass/styles.scss */
 .menu_opener_label {
   background: #f1c40f;
   width: 100px;
@@ -84,7 +94,7 @@
   transition: all .4s ease;
 }
 
-/* line 84, ../../compass/sass/styles.scss */
+/* line 95, ../../compass/sass/styles.scss */
 .menu_opener_label:after {
   position: absolute;
   top: 30px;
@@ -97,7 +107,7 @@
   transition: all 0.4s ease;
 }
 
-/* line 95, ../../compass/sass/styles.scss */
+/* line 106, ../../compass/sass/styles.scss */
 .menu_opener_label:before {
   position: absolute;
   top: 60px;
@@ -110,7 +120,7 @@
   transition: all 0.4s ease;
 }
 
-/* line 106, ../../compass/sass/styles.scss */
+/* line 117, ../../compass/sass/styles.scss */
 .barre_hamburger {
   width: 50px;
   height: 10px;
@@ -123,7 +133,7 @@
   transition: all 0.4s ease;
 }
 
-/* line 118, ../../compass/sass/styles.scss */
+/* line 129, ../../compass/sass/styles.scss */
 .link_general, .link_one, .link_two, .link_three, .link_four {
   width: 50px;
   height: 50px;
@@ -137,27 +147,27 @@
   transition: all 0.4s ease;
 }
 
-/* line 142, ../../compass/sass/styles.scss */
+/* line 153, ../../compass/sass/styles.scss */
 div.inside_content {
   text-align: center;
   margin: auto;
   line-height: 50px;
 }
 
-/* line 148, ../../compass/sass/styles.scss */
+/* line 159, ../../compass/sass/styles.scss */
 a {
   text-decoration: none;
   color: #000;
   font-family: Arial;
 }
 
-/* line 154, ../../compass/sass/styles.scss */
+/* line 165, ../../compass/sass/styles.scss */
 .inside_content img {
   margin-top: 13px;
   margin-right: 1px;
 }
 
-/* line 159, ../../compass/sass/styles.scss */
+/* line 170, ../../compass/sass/styles.scss */
 #scoreboard {
   height: 20px;
   width: 50px;
@@ -173,13 +183,13 @@ a {
   transition: all .4s ease;
 }
 
-/* line 173, ../../compass/sass/styles.scss */
+/* line 184, ../../compass/sass/styles.scss */
 .showMe {
   opacity: 1;
   transition: scale 1s linear;
 }
 
-/* line 178, ../../compass/sass/styles.scss */
+/* line 189, ../../compass/sass/styles.scss */
 .pulseCustom {
   animation: pulse 1s ease-out;
   transform-origin: 50% 50% !important;
