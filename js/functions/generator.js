@@ -10,7 +10,40 @@
 //     [-84.1703796387,33.9775311374]  // Northeast coordinates
 
 
-var point= [33.5471175795, -84.549407959];
+var point= [33.784010, -84.386030];
+
+function whichWay(coord, randomCoord, check){
+	var changedCoord = 0;
+	if(check === 1){
+		changedCoord = coord + randomCoord;
+	}else if(check === 2){
+		changedCoord = coord - randomCoord;
+	}
+	return changedCoord;
+}
+
+function generate(south, west, limit){
+	//holds our coordinates
+	var coord = [];
+	//randomly generates a coordinate based on the interval passed for west
+	var randomCoordWest = Math.random() * limit;
+	//keeps the added coordinate out of the center;
+	if(randomCoordWest < (limit/4)){
+		randomCoordWest += (limit/4)
+	}
+	//randomly generates a coordinate based on the interval passed for south
+	var randomCoordSouth = Math.random() * limit;
+	//keeps the added coordinate out of the center;
+	if(randomCoordSouth < (limit/4)){
+		randomCoordSouth += (limit/4)
+	}
+
+	var checkForSouth = Math.ceil(Math.random()* 2);
+	coord.push(whichWay(south, randomCoordSouth, checkForSouth));
+	var checkForWest = Math.ceil(Math.random()* 2);
+	coord.push(whichWay(west, randomCoordWest, checkForWest));
+	return coord;
+}
 
 function generateMarkers() {
     var tempPoint = generate(point[0], point[1], .4);
@@ -41,26 +74,6 @@ function generateMarkers() {
         console.log("test, test");
     }
 }   
-
-function generate(south, west, interval){
-	//randomly generates a coordinate based on the interval passed for west
-	var randomCoordWest = Math.random() * interval;
-	//randomly generates a coordinate based on the interval passed for south
-	var randomCoordSouth = Math.random() * interval;
-	// the array to hold the coordinates
-	var coord = [];
-	//we added the randomCoord so the point moves north from the furthest south point
- 	var newSC = south + randomCoordSouth;
- 	//add south/north coord in array second since it is referenced after west/east
-	coord.push(newSC);
-	//we added the randomCoord so the point moves east from the futhest west point
-	var newWC = west + randomCoordWest;
-	//add west/east coord in array first since it is referenced first.
-	coord.push(newWC);
-	//return the array coordinate to be pushed to the geoJson object.
-	// console.log(coord);
-	return coord;
-}
 
 function generateSwell(coord, interval){
 	//generates random variable based on interval to the coordinate
