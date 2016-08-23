@@ -26,8 +26,6 @@ var markerList = [];
 
 $('#start').on('click', function(){
     var generation = setInterval(generateMarkers, 1000);
-    var secondGen = setInterval(generateSwellMarkers, 500);
-    // console.log(secondGen);
 })
 
 
