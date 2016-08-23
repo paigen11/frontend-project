@@ -13,7 +13,7 @@
 
     <style>
         body { margin:0; padding:0; }
-        #map { position:absolute; top:150px; bottom:0; width:100%; height: 700px; }
+        #map { position:absolute; top:170px; bottom:0; width:100%; height: 700px; }
         #stop{ z-index:800; position:absolute; right:0; top:150px; margin-top:10px; margin-right:10px; background-color:#ddd; opacity:0.7; color:#000; width:100px; height:50px; line-height:50px; text-align:center;}
     </style>
 </head>
@@ -27,11 +27,13 @@
     </div>
 </div>
 <div id='map'></div>
+<div id="start">Start Game</div>
 <div id="stop" onclick="stop()"></div>
 <div class="menu_goodies">
   <input type="checkbox" id="menu_opener_id" class="menu_opener">
     <label for="menu_opener_id" class="menu_opener_label"></label>
     <div class="barre_hamburger"></div>
+    <a href="#" class="link_one link_general"><div class='inside_content'><img src="glyphicons-366-restart.png"></div></a>
     <a href="#" class="link_one link_general"><div class='inside_content'><img src="glyphicons-366-restart.png"></div></a>
     <a href="#" class="link_two link_general"><div class='inside_content'><img src="img/chainsaw-icon.png"></div></a>
     <a href="#" class="link_three link_general"><div class='inside_content'><img src="img/airstrike.png"></div></a>

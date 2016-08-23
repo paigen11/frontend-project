@@ -23,8 +23,10 @@ L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark-v9/tiles/256/{z}/{x}/{
 var popup = L.popup();  
 var myIcon = L.icon({iconUrl: 'img/zombie.png', className: 'my-div-icon'});
 var markerList = [];
-var generation = setInterval(generateMarkers, 1000);
 
+$('#start').on('click', function(){
+    var generation = setInterval(generateMarkers, 1000); 
+})
 
 
 function showScore(){
