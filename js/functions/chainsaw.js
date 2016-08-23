@@ -4,10 +4,12 @@ var chainsawSelected = false;
 chainsawDelay();
 
 $('.link_two').on('click', function() {
-	chainsawSelected = true;
-	$('.link_two').removeClass('bomb-available');
-	$('body, .leaflet-interactive').addClass('chainsaw-cursor');
-	console.log("chainsawSelected")
+	if(chainsawAvailable){
+		chainsawSelected = true;
+		$('.link_two').removeClass('bomb-available');
+		$('body, .leaflet-interactive').addClass('chainsaw-cursor');
+	}
+	
 })
 
 function sawed(marker){
