@@ -1,3 +1,7 @@
+var bombAvailable = false;
+
+bombDelay();
+
 function onMapClick(e) {
     if (bombAvailable) {
 	    var circle = L.circle(e.latlng, 2000).setStyle({className: "pulseCustom"}).addTo(map);

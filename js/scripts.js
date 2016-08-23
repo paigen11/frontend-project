@@ -24,8 +24,12 @@ var popup = L.popup();
 var myIcon = L.icon({iconUrl: 'img/monster.png', className: 'my-div-icon'});
 var markerList = [];
 var generation = setInterval(generateMarkers, 1000);
-var bombAvailable = false;
-bombDelay();
+
+// open menu automatically on page load
+setTimeout(function(){
+	$('.menu_opener').prop('checked', true);
+},2000);
+
 
 
 
