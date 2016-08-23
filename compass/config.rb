@@ -2,7 +2,7 @@
 
 #Folder settings
 relative_assets = true      		#because we're not working from the root
-css_dir = "../public/stylesheets"	#where the CSS will saved
+css_dir = "../css"	#where the CSS will saved
 sass_dir = "sass"           		#where our .scss files are
 images_dir = "../public/images"    	#the folder with your images
 
