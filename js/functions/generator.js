@@ -52,7 +52,7 @@ function generateSpawn(south, west, limit){
  		return coord;
  		spawnPoints.push(coord);
  	}else{
- 		generateSpawn(south, west, limit);
+ 		// generateSpawn(south, west, limit);
  	}
 	// console.log(spawnPoints)
 }
