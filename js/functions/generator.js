@@ -11,7 +11,7 @@
 
 
 var point= [33.784010, -84.386030];
-var spawnPoints = [[[34.006445, -84.215383]]];
+var spawnPoints = [[34.006445, -84.215383]];
 
 function whichWay(coord, randomCoord, check){
 	var changedCoord = 0;
@@ -23,35 +23,42 @@ function whichWay(coord, randomCoord, check){
 	return changedCoord;
 }
 
-function generate(south, west, limit){
+function generateSpawn(south, west, limit){	
 	//holds our coordinates
 	var coord = [];
-	//randomly generates a coordinate based on the interval passed for west
-	var randomCoordWest = Math.random() * limit;
-	//keeps the added coordinate out of the center;
-	if(randomCoordWest < (limit/4)){
-		randomCoordWest += (limit/4)
-	}
-	//randomly generates a coordinate based on the interval passed for south
-	var randomCoordSouth = Math.random() * limit;
-	//keeps the added coordinate out of the center;
-	if(randomCoordSouth < (limit/4)){
-		randomCoordSouth += (limit/4)
-	}
+	//randomly generates a coordinate based on the interval passed for west, .1 is the radius from center
+	var randomCoordWest = (Math.random() * limit);
+	//randomly generates a coordinate based on the interval passed for south, .1 is the radius from center
+	var randomCoordSouth = (Math.random() * limit);
 
 	var checkForSouth = Math.ceil(Math.random()* 2);
-	coord.push(whichWay(south, randomCoordSouth, checkForSouth));
+	coord.coordinate.push(whichWay(south, randomCoordSouth, checkForSouth));
 	var checkForWest = Math.ceil(Math.random()* 2);
-	coord.push(whichWay(west, randomCoordWest, checkForWest));
-	spawnPoints.push(coord);
+	coord.coordinate.push(whichWay(west, randomCoordWest, checkForWest));
+	if(checkForSouth == 1 && checkForWest ==1){
+		coord.quad = 1;
+	}else if(checkForSouth == 1 && checkForWest == 2){
+		coord.quad = 2;
+	}else if(checkForSouth == 2 && checkForWest == 2){
+		coord.quad = 3;
+	}else if(checkForSouth == 2 && checkForWest ==1){
+		coord.quad = 4;
+	}
+	var dist = distance(coord[0], coord[1], point[0], point[1], "M")
+	console.log(dist);
+ 	if(dist > 10){
+ 		return coord;
+ 		spawnPoints.push(coord);
+ 	}else{
+ 		generateSpawn(south, west, limit);
+ 	}
 	// console.log(spawnPoints)
-	return coord;
 }
 
 function generateMarkers() {
-    var tempPoint = generate(point[0], point[1], .4);
+    var tempPoint = generateSpawn(point[0], point[1], .4);
     // console.log(tempPoint);
-    marker = L.marker(tempPoint, {icon: myIcon})
+    marker = L.marker(tempPoint.coordinate, {icon: myIcon})
         .addTo(map)
         .on("click", function(e){
             if(bombSelected) {
@@ -100,4 +107,18 @@ function generateMarkers() {
 function stop(){
 	clearInterval(generation);
 
+}
+
+function distance(lat1, lon1, lat2, lon2, unit) {
+	var radlat1 = Math.PI * lat1/180
+	var radlat2 = Math.PI * lat2/180
+	var theta = lon1-lon2
+	var radtheta = Math.PI * theta/180
+	var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+	dist = Math.acos(dist)
+	dist = dist * 180/Math.PI
+	dist = dist * 60 * 1.1515
+	if (unit=="K") { dist = dist * 1.609344 }
+	if (unit=="N") { dist = dist * 0.8684 }
+	return dist
 }
