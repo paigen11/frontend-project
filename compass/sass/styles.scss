@@ -22,7 +22,11 @@
 
 @font-face{
     font-family: Zombie;
-    src: url('fonts/ZOMBIE.TTF');
+    src: url('../../fonts/ZOMBIE.TTF');
+}
+
+.chainsaw-cursor {
+  cursor: url('../../fonts/chainsaw.png'), default !important;
 }
 
 h1, h2{

@@ -23,6 +23,9 @@ function generateMarkers() {
             }
             scoreboard.innerHTML++;
         })
+        .on("mouseover", function(e){
+        	sawed(this);
+        });
     //push marker coords to an array    
     markerList.push(marker);
     //if markerList is longer than X show test - this will eventually end the game when the player's overrun with zombies
