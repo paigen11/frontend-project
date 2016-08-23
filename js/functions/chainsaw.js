@@ -1,6 +1,8 @@
 var chainsawAvailable = false;
 var chainsawSelected = false;
 
+chainsawDelay();
+
 $('.link_two').on('click', function() {
 	chainsawSelected = true;
 	$('.link_two').removeClass('bomb-available');
@@ -8,12 +10,14 @@ $('.link_two').on('click', function() {
 	console.log("chainsawSelected")
 })
 
-chainsawDelay();
-
 function sawed(marker){
 	if(chainsawSelected){
 		map.removeLayer(marker);
-		console.log("sawed!");
+		scoreboard.innerHTML++;
+	  	var index = markerList.indexOf(marker);
+            if(index > -1){
+                markerList.splice(index, 1);
+            }
 		setTimeout(function(){
 			chainsawAvailable = false;
 			chainsawSelected = false;

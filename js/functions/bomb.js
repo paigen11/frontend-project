@@ -1,13 +1,23 @@
 var bombAvailable = false;
+var bombSelected = false;
 
 bombDelay();
 
+$('.link_three').on('click', function() {
+	bombSelected = true;
+	$('.link_three').removeClass('bomb-available');
+	$('body, .leaflet-interactive').addClass('bomb-cursor');
+})
+
 function onMapClick(e) {
-    if (bombAvailable) {
+    if (bombSelected) {
 	    var circle = L.circle(e.latlng, 2000).setStyle({className: "pulseCustom"}).addTo(map);
     	areaEffect(circle);
     	bombAvailable = false;
+    	bombSelected = false;
     	$('.link_three').removeClass('bomb-available');
+    	$('body, .leaflet-interactive').removeClass('bomb-cursor');
+
     	bombDelay();
     }
 }
