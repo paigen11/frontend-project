@@ -30,7 +30,10 @@ setTimeout(function(){
 	$('.menu_opener').prop('checked', true);
 },2000);
 
-
+function showScore(){
+    $('#scoreboard').toggleClass('showMe');
+    console.log('hello');
+};
 
 
 
