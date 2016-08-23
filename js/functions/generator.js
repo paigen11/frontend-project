@@ -11,6 +11,7 @@
 
 
 var point= [33.784010, -84.386030];
+var spawnPoints = [];
 
 function whichWay(coord, randomCoord, check){
 	var changedCoord = 0;
@@ -42,6 +43,7 @@ function generate(south, west, limit){
 	coord.push(whichWay(south, randomCoordSouth, checkForSouth));
 	var checkForWest = Math.ceil(Math.random()* 2);
 	coord.push(whichWay(west, randomCoordWest, checkForWest));
+	spawnPoints.push(coord);
 	return coord;
 }
 
