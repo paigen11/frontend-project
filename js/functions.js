@@ -78,9 +78,9 @@ function generateMarkers() {
 function areaEffect(circle) {
 	for(i = 0; i < markerList.length; i++) {
 		if (getDistanceFromLatLonInKm(markerList[i]._latlng.lat, markerList[i]._latlng.lng, circle._latlng.lat, circle._latlng.lng) < 2){
-			console.log("target found!")
 			map.removeLayer(markerList[i])
 			markerList.splice(i, 1);
+			scoreboard.innerHTML++;
 		}
 	}
 	setTimeout(function() {
