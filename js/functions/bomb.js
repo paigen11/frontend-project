@@ -1,3 +1,23 @@
+function onMapClick(e) {
+    if (bombAvailable) {
+	    var circle = L.circle(e.latlng, 2000).setStyle({className: "pulseCustom"}).addTo(map);
+    	areaEffect(circle);
+    	bombAvailable = false;
+    	$('.link_three').removeClass('bomb-available');
+    	bombDelay();
+    }
+}
+
+function bombDelay() {
+	if (!bombAvailable) {
+		setTimeout(function(){
+			bombAvailable = true;
+			$('.link_three').addClass('bomb-available');
+		}, 5000);
+		
+	}
+}
+
 function areaEffect(circle) {
 	for(i = 0; i < markerList.length; i++) {
 		if (getDistanceFromLatLonInKm(markerList[i]._latlng.lat, markerList[i]._latlng.lng, circle._latlng.lat, circle._latlng.lng) < 2){
@@ -28,3 +48,4 @@ function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
 function deg2rad(deg) {
 	return deg * (Math.PI/180)
 }
+

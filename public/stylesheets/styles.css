@@ -167,7 +167,23 @@ a {
   margin-right: 1px;
 }
 
-/* line 170, ../../compass/sass/styles.scss */
+/* line 171, ../../compass/sass/styles.scss */
+.bomb-available {
+  animation: flash 0.5s infinite;
+}
+
+@keyframes flash {
+  0% {
+    background-color: #95C84F;
+  }
+  50% {
+    background-color: red;
+  }
+  100% {
+    background-color: #95C84F;
+  }
+}
+/* line 181, ../../compass/sass/styles.scss */
 #scoreboard {
   height: 20px;
   width: 50px;
@@ -183,13 +199,13 @@ a {
   transition: all .4s ease;
 }
 
-/* line 184, ../../compass/sass/styles.scss */
+/* line 195, ../../compass/sass/styles.scss */
 .showMe {
   opacity: 1;
   transition: scale 1s linear;
 }
 
-/* line 189, ../../compass/sass/styles.scss */
+/* line 200, ../../compass/sass/styles.scss */
 .pulseCustom {
   animation: pulse 1s ease-out;
   transform-origin: 50% 50% !important;
