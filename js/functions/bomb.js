@@ -4,9 +4,11 @@ var bombSelected = false;
 bombDelay();
 
 $('.link_three').on('click', function() {
-	bombSelected = true;
-	$('.link_three').removeClass('bomb-available');
-	$('body, .leaflet-interactive').addClass('bomb-cursor');
+	if(bombAvailable){
+		bombSelected = true;
+		$('.link_three').removeClass('bomb-available');
+		$('body, .leaflet-interactive').addClass('bomb-cursor');
+	}
 })
 
 function onMapClick(e) {
