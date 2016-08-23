@@ -38,3 +38,5 @@ function chainsawDelay() {
 		}, 5000);
 	}
 }
+
+console.log(test);
