@@ -17,13 +17,19 @@ function generateMarkers() {
     marker = L.marker(tempPoint, {icon: myIcon})
         .addTo(map)
         .on("click", function(e){
-            map.removeLayer(this);
-            //remove element from markerList array
-            var index = markerList.indexOf(this);
-            if(index > -1){
-                markerList.splice(index, 1);
+            if(bombSelected) {
+            	onMapClick(e);
+            } else {
+            	map.removeLayer(this);
+	            //remove element from markerList array
+	            var index = markerList.indexOf(this);
+	            if(index > -1){
+	                markerList.splice(index, 1);
+            	}
+            	scoreboard.innerHTML++;
             }
-            scoreboard.innerHTML++;
+
+          
         })
         .on("mouseover", function(e){
         	sawed(this);
