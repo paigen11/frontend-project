@@ -32,17 +32,17 @@ function generateSpawn(south, west, limit){
 	var randomCoordSouth = (Math.random() * limit);
 
 	var checkForSouth = Math.ceil(Math.random()* 2);
-	coord.coordinate.push(whichWay(south, randomCoordSouth, checkForSouth));
+	coord.push(whichWay(south, randomCoordSouth, checkForSouth));
 	var checkForWest = Math.ceil(Math.random()* 2);
-	coord.coordinate.push(whichWay(west, randomCoordWest, checkForWest));
+	coord.push(whichWay(west, randomCoordWest, checkForWest));
 	if(checkForSouth == 1 && checkForWest ==1){
-		coord.quad = 1;
+		coord.push(1);
 	}else if(checkForSouth == 1 && checkForWest == 2){
-		coord.quad = 2;
+		coord.push(2);
 	}else if(checkForSouth == 2 && checkForWest == 2){
-		coord.quad = 3;
+		coord.push(3);
 	}else if(checkForSouth == 2 && checkForWest ==1){
-		coord.quad = 4;
+		coord.push(4);
 	}
 	var dist = distance(coord[0], coord[1], point[0], point[1], "M")
 	console.log(dist);
@@ -109,6 +109,8 @@ function stop(){
 
 }
 
+// This super sweet function calculates the distance between a given set of coordinates and another set.
+// you can even define what unit you want it to return in (miles, kilometers, or nautical miles)!
 function distance(lat1, lon1, lat2, lon2, unit) {
 	var radlat1 = Math.PI * lat1/180
 	var radlat2 = Math.PI * lat2/180
