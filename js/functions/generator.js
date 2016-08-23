@@ -25,26 +25,28 @@ function whichWay(coord, randomCoord, check){
 
 function generateSpawn(south, west, limit){	
 	//holds our coordinates
-	var coord = [];
+	var coord = {};
+	coord.coordinates = [];
 	//randomly generates a coordinate based on the interval passed for west, .1 is the radius from center
 	var randomCoordWest = (Math.random() * limit);
 	//randomly generates a coordinate based on the interval passed for south, .1 is the radius from center
 	var randomCoordSouth = (Math.random() * limit);
 
 	var checkForSouth = Math.ceil(Math.random()* 2);
-	coord.push(whichWay(south, randomCoordSouth, checkForSouth));
+	coord.coordinates.push(whichWay(south, randomCoordSouth, checkForSouth));
 	var checkForWest = Math.ceil(Math.random()* 2);
-	coord.push(whichWay(west, randomCoordWest, checkForWest));
+	coord.coordinates.push(whichWay(west, randomCoordWest, checkForWest));
 	if(checkForSouth == 1 && checkForWest ==1){
-		coord.push(1);
+		coord.quad = 1;
 	}else if(checkForSouth == 1 && checkForWest == 2){
-		coord.push(2);
+		coord.quad = 2;
 	}else if(checkForSouth == 2 && checkForWest == 2){
-		coord.push(3);
+		coord.quad = 3;
 	}else if(checkForSouth == 2 && checkForWest ==1){
-		coord.push(4);
+		coord.quad = 4;
 	}
-	var dist = distance(coord[0], coord[1], point[0], point[1], "M")
+	console.log(coord);
+	var dist = distance(coord.coordinates[0], coord.coordinates[1], point[0], point[1], "M")
 	console.log(dist);
  	if(dist > 10){
  		return coord;
