@@ -11,7 +11,7 @@
 
 
 var point= [33.784010, -84.386030];
-var spawnPoints = [];
+var spawnPoints = [[[34.006445, -84.215383]]];
 
 function whichWay(coord, randomCoord, check){
 	var changedCoord = 0;
@@ -44,11 +44,106 @@ function generate(south, west, limit){
 	var checkForWest = Math.ceil(Math.random()* 2);
 	coord.push(whichWay(west, randomCoordWest, checkForWest));
 	spawnPoints.push(coord);
+	// console.log(spawnPoints)
 	return coord;
 }
 
+
 function generateMarkers() {
     var tempPoint = generate(point[0], point[1], .4);
+    // console.log(tempPoint);
+    marker = L.marker(tempPoint, {icon: myIcon})
+        .addTo(map)
+        .on("click", function(e){
+            if(bombSelected) {
+            	onMapClick(e);
+            } else {
+            	map.removeLayer(this);
+	            //remove element from markerList array
+	            var index = markerList.indexOf(this);
+	            if(index > -1){
+	                markerList.splice(index, 1);
+            	}
+            	scoreboard.innerHTML++;
+            }
+
+          
+        })
+        .on("mouseover", function(e){
+        	sawed(this);
+        });
+    //push marker coords to an array    
+    markerList.push(marker);
+    //if markerList is longer than X show test - this will eventually end the game when the player's overrun with zombies
+    if(markerList.length > 10){
+        // console.log("test, test");
+    }
+}   
+
+// function generateSwell(coord, interval){
+// 	//generates random variable based on interval to the coordinate
+// 	var randomCoord = Math.random() * interval;
+// 	//holds the new lat or lng
+// 	var newCoord = 0;
+// 	//random check for whether to add or subtract
+// 	var whichWay = Math.ceil(Math.random()*2);
+// 	//determines whether we add or subtract the interval
+// 	if(whichWay == 1){
+// 		newCoord = coord + randomCoord;
+// 	}else if(whichWay == 2){
+// 		newCoord = coord - randomCoord;
+// 	}
+// 	return newCoord;
+// }
+
+var latCounter = 0;
+var lngCounter = 0;
+
+
+function generateSwell(coord, origin){	
+	var i = 0; //this is the array counter that keeps track of the index in spawnPoints array
+	var z = 0
+	var newCoord = [];
+	var random = Math.random() / 10;
+	var random2 = Math.ceil(Math.random() * 4)
+	console.log(random);
+	var newCoordLat = 0;
+	var newCoordLng = 0;
+	if(coord[0][z][0] < origin[0]){
+		newCoordLat = coord[0][z][0] + random + latCounter;
+		newCoord.push(newCoordLat);
+		latCounter += 0.00035;
+		i++;
+		z++;
+	}else if(coord[0][z][0] > origin[0]){
+		newCoordLat = coord[0][z][0] - random - latCounter;
+		newCoord.push(newCoordLat);
+		latCounter += 0.00035;
+		i++;
+		z++;
+	}
+	if(coord[0][z][1] < origin[1]){
+		newCoordLng = coord[0][z][1] + random + lngCounter;
+		newCoord.push(newCoordLng);
+		lngCounter += 0.00035;
+	}else if(coord[0][z][1] > origin[1]){
+		newCoordLng = coord[0][z][1] - random - lngCounter;
+		newCoord.push(newCoordLng);
+		lngCounter += 0.00035;
+	}
+	// console.log(i);
+	spawnpoints[0].push(newCoord);
+	return newCoord;
+}
+
+function stop(){
+	clearInterval(generation);
+	clearInterval(secondGen);
+}
+
+function generateSwellMarkers() {
+    var tempPoint = generateSwell(spawnPoints, point);
+    // console.log(tempPoint);
     marker = L.marker(tempPoint, {icon: myIcon})
         .addTo(map)
         .on("click", function(e){
@@ -75,24 +170,4 @@ function generateMarkers() {
     if(markerList.length > 10){
         console.log("test, test");
     }
-}   
-
-function generateSwell(coord, interval){
-	//generates random variable based on interval to the coordinate
-	var randomCoord = Math.random() * interval;
-	//holds the new lat or lng
-	var newCoord = 0;
-	//random check for whether to add or subtract
-	var whichWay = Math.ceil(Math.random()*2);
-	//determines whether we add or subtract the interval
-	if(whichWay == 1){
-		newCoord = coord + randomCoord;
-	}else if(whichWay == 2){
-		newCoord = coord - randomCoord;
-	}
-	return newCoord;
-}
-
-function stop(){
-	clearInterval(generation);
-}
+}  
