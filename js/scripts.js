@@ -32,7 +32,6 @@ setTimeout(function(){
 
 function showScore(){
     $('#scoreboard').toggleClass('showMe');
-    console.log('hello');
 };
 
 
