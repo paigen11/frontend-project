@@ -255,20 +255,11 @@ a {
   height: 75px;
   background-color: green;
   z-index: 9000;
-  transition: 2s linear all;
+  transition: all .5s ease-in;
 }
 
 /* line 242, ../../compass/sass/styles.scss */
 .slide-in {
-  animation: slide-in 0.5s ease-in;
+  transform: translateX(100%);
   -webkit-animation-fill-mode: forwards;
-}
-
-@keyframes slide-in {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
 }
