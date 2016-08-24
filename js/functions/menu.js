@@ -14,10 +14,11 @@ function menuToggle(){
 $('#start').on('click', function(){ 
     generation = setInterval(generateMarkers, 1000); 
     playOptions(); 
-    menuToggle(); 
+    menuToggle();
+    markerMover();
 }) 
 function showScore(){ 
-    $('#scoreboard').toggleClass('showMe'); 
+  $('#scoreboard').toggleClass('showMe'); 
 }; 
  
 function playOptions(){ 
@@ -26,7 +27,7 @@ function playOptions(){
 }
 
 function showScore(){
-    $('#scoreboard').toggleClass('showMe');
+  $('#scoreboard').toggleClass('showMe');
 };
 
 function stop(){

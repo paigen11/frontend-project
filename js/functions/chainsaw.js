@@ -44,6 +44,7 @@ function chainsawDelay() {
 		setTimeout(function(){
 			chainsawAvailable = true;
 			$('.link_two').addClass('bomb-available');
+			newMessage("chainsaw ready!");
 		}, 5000);
 	}
 }

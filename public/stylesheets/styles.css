@@ -255,9 +255,10 @@ a {
   height: 75px;
   background-color: green;
   z-index: 9000;
+  transition: 2s linear all;
 }
 
-/* line 241, ../../compass/sass/styles.scss */
+/* line 242, ../../compass/sass/styles.scss */
 .slide-in {
   animation: slide-in 0.5s ease-in;
   -webkit-animation-fill-mode: forwards;
