@@ -17,14 +17,13 @@ map.dragging.disable();
 map.on('click', onMapClick);
 
 //add dark Mapbox styled background
-L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoicGFpZ2VuMTEiLCJhIjoiY2lyemJlZ3A0MDBqZTJ5cGs5ZHJicjI2YyJ9.2-dZqM-k2obDN47BpWq5Lw')
+L.tileLayer('https://api.mapbox.com/styles/v1/paigen11/cis9a8hiy002f2yqnpebp1p32/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoicGFpZ2VuMTEiLCJhIjoiY2lyemJlZ3A0MDBqZTJ5cGs5ZHJicjI2YyJ9.2-dZqM-k2obDN47BpWq5Lw')
 .addTo(map);
 
 var popup = L.popup();  
-var myIcon = L.icon({iconUrl: 'img/zombie.png', className: 'my-div-icon'});
-var corpseIcon = L.icon({iconUrl: 'img/zombie_corpse.png', className: 'my-div-icon'});
+var myIcon = L.icon({iconUrl: 'img/zombie.png', className: 'my-div-icon', iconSize: [25,25]});
 var markerList = [];
 var generation;
 
-
-
+var castle = L.icon({iconUrl: 'img/castle1.gif', iconSize: [40, 61]});
+L.marker([33.73804, -84.38324], {icon: castle}).addTo(map);
