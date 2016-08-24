@@ -10,14 +10,23 @@ function SpawnPoint(){
 	this.quad = 0;
 	this.trajectory = [];
 	this.increment = [];
+	var spawning = this;
+	this.zombies = 0;
+	this.addZombie = function addZombie(){
+		console.log('im a zombie');
+		spawning.zombies++;
+		console.log(spawning.zombies);
+	};
+	this.zombiePlaced = setInterval(spawning.addZombie, 1000);
 }
+
 function swellTrajectory(newLat1, newLon1, absLat2, absLon2, quad){
 	var startBox = [];
     var startBoxlat = 0;
     var startBoxlon = 0;
     var boxCoord = swellBox(newLat1, newLon1, absLat2, absLon2);
-    var boxAbsLat = boxCoord[0] / 6; //6 is the total amount of increment per box
-    var boxAbsLon = boxCoord[1] / 6;
+    var boxAbsLat = boxCoord[0] / 3; //6 is the total amount of increment per box
+    var boxAbsLon = boxCoord[1] / 3;
     if(quad == 1){
         startBoxlat = newLat1 - boxAbsLat;
         startBoxlon = newLon1 - boxAbsLon;
@@ -54,7 +63,7 @@ function whichWaySouth(coord, randomCoord, check){
 	return changedCoord;
 }
 
-function generateSpawn(south, west, limit){
+function generateSpawn( ){
 	//holds our coordinates
 	var coord = new SpawnPoint();
 	var forRandomSpawn = Math.ceil(Math.random()*3);

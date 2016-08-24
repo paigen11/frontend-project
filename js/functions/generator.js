@@ -36,13 +36,13 @@ function generateSpawn(south, west, limit){
 	coord.coordinates.push(whichWay(south, randomCoordSouth, checkForSouth));
 	var checkForWest = Math.ceil(Math.random()* 2);
 	coord.coordinates.push(whichWay(west, randomCoordWest, checkForWest));
-	if(checkForSouth == 1 && checkForWest ==1){
+	if(checkForSouth == 1 && checkForWest == 1){
 		coord.quad = 1;
 	}else if(checkForSouth == 1 && checkForWest == 2){
 		coord.quad = 2;
 	}else if(checkForSouth == 2 && checkForWest == 2){
 		coord.quad = 3;
-	}else if(checkForSouth == 2 && checkForWest ==1){
+	}else if(checkForSouth == 2 && checkForWest == 1){
 		coord.quad = 4;
 	}
 	console.log(coord);
