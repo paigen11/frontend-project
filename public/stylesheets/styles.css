@@ -231,3 +231,17 @@ a {
     transform: scale(0.1);
   }
 }
+/* line 218, ../../compass/sass/styles.scss */
+#power {
+  z-index: 10;
+}
+
+/* line 222, ../../compass/sass/styles.scss */
+.restartMove {
+  top: 85px !important;
+}
+
+/* line 226, ../../compass/sass/styles.scss */
+.startMove {
+  left: 315px;
+}
