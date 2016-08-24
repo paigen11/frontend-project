@@ -60,7 +60,7 @@ function generateSpawn(south, west, limit){
 function generateMarkers() {
     var tempPoint = generateSpawn(point[0], point[1], .4);
     // console.log(tempPoint);
-    marker = L.marker(tempPoint.coordinate, {icon: myIcon})
+    marker = L.marker(tempPoint.coordinates, {icon: myIcon})
         .addTo(map)
         .on("click", function(e){
             if(bombSelected) {
