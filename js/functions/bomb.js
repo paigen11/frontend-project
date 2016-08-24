@@ -13,7 +13,7 @@ $('.link_three').on('click', function() {
 
 function onMapClick(e) {
     if (bombSelected) {
-	    var circle = L.circle(e.latlng, 2000).setStyle({className: "pulseCustom"}).addTo(map);
+	    var circle = L.circle(e.latlng, 8000).setStyle({className: "pulseCustom"}).addTo(map);
     	areaEffect(circle);
     	bombAvailable = false;
     	bombSelected = false;
@@ -36,7 +36,7 @@ function bombDelay() {
 
 function areaEffect(circle) {
 	for(i = 0; i < markerList.length; i++) {
-		if (getDistanceFromLatLonInKm(markerList[i]._latlng.lat, markerList[i]._latlng.lng, circle._latlng.lat, circle._latlng.lng) < 2){
+		if (getDistanceFromLatLonInKm(markerList[i]._latlng.lat, markerList[i]._latlng.lng, circle._latlng.lat, circle._latlng.lng) < 8){
 			map.removeLayer(markerList[i])
 			markerList.splice(i, 1);
 			scoreboard.innerHTML++;
