@@ -19,7 +19,11 @@ $('.link_two').on('click', function() {
 // if the weapon is available and listener fires, the marker is removed
 function sawed(marker){
 	if(chainsawSelected){
-		map.removeLayer(marker);
+		marker.setIcon(corpseIcon);
+		setTimeout(function(){
+			map.removeLayer(marker);
+		}, 1000)
+		
 		scoreboard.innerHTML++;
 	  	var index = markerList.indexOf(marker);
             if(index > -1){

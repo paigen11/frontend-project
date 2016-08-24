@@ -43,9 +43,18 @@ function bombDelay() {
 // loop through markers in array, if coordinates are less than the radius
 // of the weapon's effect, remove markers from array and map, and update score.
 function areaEffect(circle) {
+	var killedMarkers = [];
 	for(i = 0; i < markerList.length; i++) {
 		if (getDistanceFromLatLonInKm(markerList[i]._latlng.lat, markerList[i]._latlng.lng, circle._latlng.lat, circle._latlng.lng) < 8){
-			map.removeLayer(markerList[i])
+			markerList[i].setIcon(corpseIcon);
+			killedMarkers.push(markerList[i])
+
+			setTimeout(function(){
+				for(j = 0; j < killedMarkers.length; j++) {
+					map.removeLayer(killedMarkers[j])
+				}
+			},1000)
+			
 			markerList.splice(i, 1);
 			scoreboard.innerHTML++;
 		}

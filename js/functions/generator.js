@@ -66,7 +66,11 @@ function generateMarkers() {
             if(bombSelected) {
             	onMapClick(e);
             } else {
-            	map.removeLayer(this);
+            	var that = this;
+            	this.setIcon(corpseIcon);
+            	setTimeout(function(){
+					map.removeLayer(that);
+				}, 1000, that)
 	            //remove element from markerList array
 	            var index = markerList.indexOf(this);
 	            if(index > -1){
