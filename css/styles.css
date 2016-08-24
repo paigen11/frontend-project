@@ -182,13 +182,13 @@ a {
 
 @keyframes flash {
   0% {
-    background-color: #95C84F;
+    background-color: #FFA240;
   }
   50% {
     background-color: red;
   }
   100% {
-    background-color: #95C84F;
+    background-color: #FFA240;
   }
 }
 /* line 187, ../compass/sass/styles.scss */
