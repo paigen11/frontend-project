@@ -111,8 +111,6 @@ function stop(){
 
 }
 
-// This super sweet function calculates the distance between a given set of coordinates and another set.
-// you can even define what unit you want it to return in (miles, kilometers, or nautical miles)!
 function distance(lat1, lon1, lat2, lon2, unit) {
 	var radlat1 = Math.PI * lat1/180
 	var radlat2 = Math.PI * lat2/180

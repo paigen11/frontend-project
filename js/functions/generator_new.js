@@ -2,7 +2,9 @@
 //hopefully this shit doesn't break
 //i swear, i am going to remove that comment when i officially post this.
 
+var point= [33.784010, -84.386030];
 var spawnPoints = [];
+
 function SpawnPoint(){
 	this.coordinates = [];
 	this.quad = 0;
@@ -40,9 +42,6 @@ function swellBox(newLat1, newLon1, absLat2, absLon2){
      boxCoord = [boxLat, boxLon];
      return boxCoord;
 }
-	
-var point= [33.784010, -84.386030];
-var spawnPoints = [34.006445, -84.215383];
 
 function whichWayWest(coord, randomCoord, check){
 	var changedCoord = 0;
