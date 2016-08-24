@@ -5,16 +5,19 @@ scoreboard.innerHTML = count;
 // open menu automatically on page load
 setTimeout(function(){
 	$('.menu_opener').prop('checked', true);
+	showScore();
 },2000);
 
 function menuToggle(){ 
-  $('.menu_opener').prop('checked', !$('.menu_opener').prop("checked")); 
+  $('.menu_opener').prop('checked', !$('.menu_opener').prop("checked"));
+  $('#start').removeClass('startMove');
+  $('#restart').removeClass('restartMove');
+  $('#scoreboard').removeClass('showMe');
 } 
  
 $('#start').on('click', function(){ 
     generation = setInterval(generateMarkers, 1000); 
     playOptions(); 
-    menuToggle();
     markerMover();
     bombDelay();
     chainsawDelay();
