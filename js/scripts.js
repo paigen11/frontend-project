@@ -21,7 +21,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/paigen11/cis9a8hiy002f2yqnpebp1p32
 .addTo(map);
 
 var popup = L.popup();  
-var myIcon = L.icon({iconUrl: 'img/zombie.png', className: 'my-div-icon', iconSize: [25,25]});
+var myIcon = L.icon({iconUrl: 'img/zombie_stroke.png', className: 'my-div-icon', iconSize: [25,25]});
 var markerList = [];
 var generation;
 
