@@ -25,7 +25,7 @@ var myIcon = L.icon({iconUrl: 'img/zombie.png', className: 'my-div-icon'});
 var markerList = [];
 
 $('#start').on('click', function(){
-    var generation = setInterval(generateMarkers, 1000); 
+    var generation = setTimeout(generateMarkers, 1000);
 })
 
 
