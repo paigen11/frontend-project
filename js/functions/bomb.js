@@ -34,7 +34,7 @@ function bombDelay() {
 		setTimeout(function(){
 			bombAvailable = true;
 			$('.link_three').addClass('bomb-available');
-			newMessage("bomb ready!");
+			 newMessage("The bomb's about to go off! Wipe out a bunch of zombies with one hit."); 
 		}, 10000);
 		
 	}

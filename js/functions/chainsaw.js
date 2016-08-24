@@ -44,7 +44,7 @@ function chainsawDelay() {
 		setTimeout(function(){
 			chainsawAvailable = true;
 			$('.link_two').addClass('bomb-available');
-			newMessage("chainsaw ready!");
+			newMessage("The chainsaw is ready to mow down some undead! Just hover over them to kill 'em.");
 		}, 30000);
 	}
 }

@@ -38,7 +38,6 @@ h1, h2{
     text-align: center;
 }
 
-
 .leaflet-marker-icon{
 	height: 20px;
 	transition: all 1s linear;
@@ -233,13 +232,18 @@ a {
   left: -300px;
   width: 300px;
   height: 75px;
-  background-color: green;
-  z-index: 9000;
-  transition: all .5s ease-in;
-
+  background-color: #FFA240; 
+  z-index: 9000; 
+  transition: all .5s ease-in; 
+  border-radius: 5px; 
+} 
+ 
+.message-text{ 
+  font-family: Zombie, arial; 
+  text-align: center; 
 }
 
 .slide-in {
-  transform: translateX(100%);
+  transform: translateX(135%);
   -webkit-animation-fill-mode: forwards;
 }
