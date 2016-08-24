@@ -55,7 +55,6 @@ h1, h2{
   top: 150px;
 }
 .menu_opener:checked ~ #scoreboard {
-	top: 300px;
     left: 150px;
 }
 .menu_opener:checked ~ .link_two {
@@ -200,6 +199,7 @@ a {
 	transition: all .4s ease;
 }
 .showMe {
+  top: 315px !important;
 	opacity: 1 !important;
 	transition: all 1s linear;
 }

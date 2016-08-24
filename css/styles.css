@@ -1,77 +1,85 @@
 @font-face {
   font-family: Zombie;
-  src: url("fonts/ZOMBIE.TTF");
+  src: url("../../fonts/ZOMBIE.TTF");
 }
 /* line 28, ../compass/sass/styles.scss */
+.chainsaw-cursor {
+  cursor: url("../../fonts/chainsaw.png"), default !important;
+}
+
+/* line 32, ../compass/sass/styles.scss */
+.bomb-cursor {
+  cursor: url("../../fonts/crosshair.png") 32 32, default !important;
+}
+
+/* line 36, ../compass/sass/styles.scss */
 h1, h2 {
   font-family: Zombie, arial;
   text-align: center;
 }
 
-/* line 34, ../compass/sass/styles.scss */
+/* line 42, ../compass/sass/styles.scss */
 .leaflet-marker-icon {
   height: 20px;
   transition: all 1s linear;
 }
 
-/* line 39, ../compass/sass/styles.scss */
+/* line 47, ../compass/sass/styles.scss */
 .menu_goodies {
   z-index: 801;
   position: relative;
 }
 
-/* line 43, ../compass/sass/styles.scss */
+/* line 51, ../compass/sass/styles.scss */
 .menu_opener {
   display: none;
 }
 
-/* line 46, ../compass/sass/styles.scss */
+/* line 54, ../compass/sass/styles.scss */
 .menu_opener:checked ~ .link_one {
   top: 150px;
 }
 
-/* line 49, ../compass/sass/styles.scss */
+/* line 57, ../compass/sass/styles.scss */
 .menu_opener:checked ~ #scoreboard {
-  opacity: 1;
-  top: 300px;
   left: 150px;
 }
 
-/* line 54, ../compass/sass/styles.scss */
+/* line 60, ../compass/sass/styles.scss */
 .menu_opener:checked ~ .link_two {
   left: 345px;
 }
 
-/* line 57, ../compass/sass/styles.scss */
+/* line 63, ../compass/sass/styles.scss */
 .menu_opener:checked ~ .link_three {
   top: 345px;
 }
 
-/* line 60, ../compass/sass/styles.scss */
+/* line 66, ../compass/sass/styles.scss */
 .menu_opener:checked ~ .link_four {
   left: 150px;
 }
 
-/* line 63, ../compass/sass/styles.scss */
+/* line 69, ../compass/sass/styles.scss */
 .menu_opener:checked ~ .barre_hamburger {
   opacity: 0;
 }
 
-/* line 66, ../compass/sass/styles.scss */
+/* line 72, ../compass/sass/styles.scss */
 .menu_opener:checked ~ .menu_opener_label:after {
   transform: rotate(45deg);
   top: 33px;
   left: 13px;
 }
 
-/* line 71, ../compass/sass/styles.scss */
+/* line 77, ../compass/sass/styles.scss */
 .menu_opener:checked ~ .menu_opener_label:before {
   transform: rotate(-45deg);
   top: 33px;
   left: 13px;
 }
 
-/* line 76, ../compass/sass/styles.scss */
+/* line 82, ../compass/sass/styles.scss */
 .menu_opener:checked ~ .menu_opener_label {
   width: 75px;
   height: 75px;
@@ -79,9 +87,9 @@ h1, h2 {
   left: 235.5px;
 }
 
-/* line 82, ../compass/sass/styles.scss */
+/* line 88, ../compass/sass/styles.scss */
 .menu_opener_label {
-  background: #f1c40f;
+  background: #95C84F;
   width: 100px;
   height: 100px;
   display: block;
@@ -94,7 +102,7 @@ h1, h2 {
   transition: all .4s ease;
 }
 
-/* line 95, ../compass/sass/styles.scss */
+/* line 101, ../compass/sass/styles.scss */
 .menu_opener_label:after {
   position: absolute;
   top: 30px;
@@ -107,7 +115,7 @@ h1, h2 {
   transition: all 0.4s ease;
 }
 
-/* line 106, ../compass/sass/styles.scss */
+/* line 112, ../compass/sass/styles.scss */
 .menu_opener_label:before {
   position: absolute;
   top: 60px;
@@ -120,7 +128,7 @@ h1, h2 {
   transition: all 0.4s ease;
 }
 
-/* line 117, ../compass/sass/styles.scss */
+/* line 123, ../compass/sass/styles.scss */
 .barre_hamburger {
   width: 50px;
   height: 10px;
@@ -133,7 +141,7 @@ h1, h2 {
   transition: all 0.4s ease;
 }
 
-/* line 129, ../compass/sass/styles.scss */
+/* line 135, ../compass/sass/styles.scss */
 .link_general, .link_one, .link_two, .link_three, .link_four {
   width: 50px;
   height: 50px;
@@ -142,32 +150,48 @@ h1, h2 {
   position: absolute;
   top: 250px;
   left: 250px;
-  background: #f1c40f;
+  background: #95C84F;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
 
-/* line 153, ../compass/sass/styles.scss */
+/* line 159, ../compass/sass/styles.scss */
 div.inside_content {
   text-align: center;
   margin: auto;
   line-height: 50px;
 }
 
-/* line 159, ../compass/sass/styles.scss */
+/* line 165, ../compass/sass/styles.scss */
 a {
   text-decoration: none;
   color: #000;
   font-family: Arial;
 }
 
-/* line 165, ../compass/sass/styles.scss */
+/* line 171, ../compass/sass/styles.scss */
 .inside_content img {
   margin-top: 13px;
   margin-right: 1px;
 }
 
-/* line 170, ../compass/sass/styles.scss */
+/* line 177, ../compass/sass/styles.scss */
+.bomb-available {
+  animation: flash 0.5s infinite;
+}
+
+@keyframes flash {
+  0% {
+    background-color: #95C84F;
+  }
+  50% {
+    background-color: red;
+  }
+  100% {
+    background-color: #95C84F;
+  }
+}
+/* line 187, ../compass/sass/styles.scss */
 #scoreboard {
   height: 20px;
   width: 50px;
@@ -176,20 +200,21 @@ a {
   border-radius: 500px;
   top: 250px;
   left: 250px;
-  background: #f1c40f;
+  background: #95C84F;
   text-align: center;
   line-height: 20px;
   opacity: 0;
   transition: all .4s ease;
 }
 
-/* line 184, ../compass/sass/styles.scss */
+/* line 201, ../compass/sass/styles.scss */
 .showMe {
-  opacity: 1;
-  transition: scale 1s linear;
+  top: 315px !important;
+  opacity: 1 !important;
+  transition: all 1s linear;
 }
 
-/* line 189, ../compass/sass/styles.scss */
+/* line 207, ../compass/sass/styles.scss */
 .pulseCustom {
   animation: pulse 1s ease-out;
   transform-origin: 50% 50% !important;
@@ -205,4 +230,36 @@ a {
   100% {
     transform: scale(0.1);
   }
+}
+/* line 218, ../compass/sass/styles.scss */
+#power {
+  z-index: 10;
+}
+
+/* line 222, ../compass/sass/styles.scss */
+.restartMove {
+  top: 85px !important;
+}
+
+/* line 226, ../compass/sass/styles.scss */
+.startMove {
+  left: 315px;
+}
+
+/* line 230, ../compass/sass/styles.scss */
+#message {
+  position: absolute;
+  top: 600px;
+  left: -300px;
+  width: 300px;
+  height: 75px;
+  background-color: green;
+  z-index: 9000;
+  transition: all .5s ease-in;
+}
+
+/* line 242, ../compass/sass/styles.scss */
+.slide-in {
+  transform: translateX(100%);
+  -webkit-animation-fill-mode: forwards;
 }
