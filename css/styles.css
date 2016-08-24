@@ -185,7 +185,7 @@ a {
     background-color: #FFA240;
   }
   50% {
-    background-color: red;
+    background-color: #F27002;
   }
   100% {
     background-color: #FFA240;
@@ -238,7 +238,7 @@ a {
 
 /* line 222, ../compass/sass/styles.scss */
 .restartMove {
-  top: 85px !important;
+  left: 185px !important;
 }
 
 /* line 226, ../compass/sass/styles.scss */
@@ -262,4 +262,19 @@ a {
 .slide-in {
   transform: translateX(100%);
   -webkit-animation-fill-mode: forwards;
+}
+
+/* line 247, ../compass/sass/styles.scss */
+.danger-wrapper {
+  height: 50px;
+  width: 50px;
+  background: #FFA240;
+  z-index: 801;
+  position: absolute;
+  left: 250px;
+  top: 200px;
+  border-radius: 50px;
+  line-height: 50px;
+  text-align: center;
+  transition: all .5s ease;
 }
