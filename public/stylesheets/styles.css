@@ -1,247 +1,41 @@
-@font-face {
-  font-family: Zombie;
-  src: url("../../fonts/ZOMBIE.TTF");
-}
-/* line 28, ../../compass/sass/styles.scss */
-.chainsaw-cursor {
-  cursor: url("../../fonts/chainsaw.png"), default !important;
-}
+/*
+Error: Invalid CSS after "...nslateX(100%);}": expected "}", was ""
+        on line 249 of /Users/eric/digitalcrafts/7-16immersive/unit2/frontend-project/compass/sass/styles.scss
 
-/* line 32, ../../compass/sass/styles.scss */
-.bomb-cursor {
-  cursor: url("../../fonts/crosshair.png") 32 32, default !important;
-}
+244: }
+245: 
+246: @keyframes slide-in {
+247:   0% {transform: translateX(0%);}
+248:   100% {transform: translateX(100%);}
 
-/* line 36, ../../compass/sass/styles.scss */
-h1, h2 {
-  font-family: Zombie, arial;
-  text-align: center;
-}
-
-/* line 42, ../../compass/sass/styles.scss */
-.leaflet-marker-icon {
-  height: 20px;
-  transition: all 1s linear;
-}
-
-/* line 47, ../../compass/sass/styles.scss */
-.menu_goodies {
-  z-index: 801;
-  position: relative;
-}
-
-/* line 51, ../../compass/sass/styles.scss */
-.menu_opener {
-  display: none;
-}
-
-/* line 54, ../../compass/sass/styles.scss */
-.menu_opener:checked ~ .link_one {
-  top: 150px;
-}
-
-/* line 57, ../../compass/sass/styles.scss */
-.menu_opener:checked ~ #scoreboard {
-  top: 300px;
-  left: 150px;
-}
-
-/* line 61, ../../compass/sass/styles.scss */
-.menu_opener:checked ~ .link_two {
-  left: 345px;
-}
-
-/* line 64, ../../compass/sass/styles.scss */
-.menu_opener:checked ~ .link_three {
-  top: 345px;
-}
-
-/* line 67, ../../compass/sass/styles.scss */
-.menu_opener:checked ~ .link_four {
-  left: 150px;
-}
-
-/* line 70, ../../compass/sass/styles.scss */
-.menu_opener:checked ~ .barre_hamburger {
-  opacity: 0;
-}
-
-/* line 73, ../../compass/sass/styles.scss */
-.menu_opener:checked ~ .menu_opener_label:after {
-  transform: rotate(45deg);
-  top: 33px;
-  left: 13px;
-}
-
-/* line 78, ../../compass/sass/styles.scss */
-.menu_opener:checked ~ .menu_opener_label:before {
-  transform: rotate(-45deg);
-  top: 33px;
-  left: 13px;
-}
-
-/* line 83, ../../compass/sass/styles.scss */
-.menu_opener:checked ~ .menu_opener_label {
-  width: 75px;
-  height: 75px;
-  top: 235.5px;
-  left: 235.5px;
-}
-
-/* line 89, ../../compass/sass/styles.scss */
-.menu_opener_label {
-  background: #95C84F;
-  width: 100px;
-  height: 100px;
-  display: block;
-  cursor: pointer;
-  border-radius: 50%;
-  position: absolute;
-  top: 225px;
-  left: 225px;
-  z-index: 10;
-  transition: all .4s ease;
-}
-
-/* line 102, ../../compass/sass/styles.scss */
-.menu_opener_label:after {
-  position: absolute;
-  top: 30px;
-  left: 25px;
-  background: #000;
-  content: "";
-  width: 50px;
-  height: 10px;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-}
-
-/* line 113, ../../compass/sass/styles.scss */
-.menu_opener_label:before {
-  position: absolute;
-  top: 60px;
-  left: 25px;
-  background: #000;
-  content: "";
-  width: 50px;
-  height: 10px;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-}
-
-/* line 124, ../../compass/sass/styles.scss */
-.barre_hamburger {
-  width: 50px;
-  height: 10px;
-  position: absolute;
-  top: 270px;
-  left: 250px;
-  background: #000;
-  z-index: 20;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-}
-
-/* line 136, ../../compass/sass/styles.scss */
-.link_general, .link_one, .link_two, .link_three, .link_four {
-  width: 50px;
-  height: 50px;
-  display: block;
-  border-radius: 50%;
-  position: absolute;
-  top: 250px;
-  left: 250px;
-  background: #95C84F;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-}
-
-/* line 160, ../../compass/sass/styles.scss */
-div.inside_content {
-  text-align: center;
-  margin: auto;
-  line-height: 50px;
-}
-
-/* line 166, ../../compass/sass/styles.scss */
-a {
-  text-decoration: none;
-  color: #000;
-  font-family: Arial;
-}
-
-/* line 172, ../../compass/sass/styles.scss */
-.inside_content img {
-  margin-top: 13px;
-  margin-right: 1px;
-}
-
-/* line 178, ../../compass/sass/styles.scss */
-.bomb-available {
-  animation: flash 0.5s infinite;
-}
-
-@keyframes flash {
-  0% {
-    background-color: #95C84F;
-  }
-  50% {
-    background-color: red;
-  }
-  100% {
-    background-color: #95C84F;
-  }
-}
-/* line 188, ../../compass/sass/styles.scss */
-#scoreboard {
-  height: 20px;
-  width: 50px;
-  position: absolute;
-  z-index: 802;
-  border-radius: 500px;
-  top: 250px;
-  left: 250px;
-  background: #95C84F;
-  text-align: center;
-  line-height: 20px;
-  opacity: 0;
-  transition: all .4s ease;
-}
-
-/* line 202, ../../compass/sass/styles.scss */
-.showMe {
-  opacity: 1 !important;
-  transition: all 1s linear;
-}
-
-/* line 207, ../../compass/sass/styles.scss */
-.pulseCustom {
-  animation: pulse 1s ease-out;
-  transform-origin: 50% 50% !important;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(0.1);
-  }
-  50% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0.1);
-  }
-}
-/* line 218, ../../compass/sass/styles.scss */
-#power {
-  z-index: 10;
-}
-
-/* line 222, ../../compass/sass/styles.scss */
-.restartMove {
-  top: 85px !important;
-}
-
-/* line 226, ../../compass/sass/styles.scss */
-.startMove {
-  left: 315px;
-}
+Backtrace:
+/Users/eric/digitalcrafts/7-16immersive/unit2/frontend-project/compass/sass/styles.scss:249
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1189:in `expected'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1125:in `expected'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1120:in `tok!'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:214:in `directive_body'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:205:in `directive'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:675:in `block_child'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:668:in `block_contents'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:125:in `stylesheet'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:41:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/engine.rb:406:in `_to_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/engine.rb:281:in `render'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:494:in `update_stylesheet'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `each'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:473:in `on_file_changed'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:331:in `block in watch'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/vendor/listen/lib/listen/listener.rb:252:in `call'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/vendor/listen/lib/listen/listener.rb:252:in `on_change'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/vendor/listen/lib/listen/adapter.rb:254:in `call'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/vendor/listen/lib/listen/adapter.rb:254:in `report_changes'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/vendor/listen/lib/listen/adapter.rb:323:in `poll_changed_directories'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...nslateX(100%);}\": expected \"}\", was \"\"\A         on line 249 of /Users/eric/digitalcrafts/7-16immersive/unit2/frontend-project/compass/sass/styles.scss\A \A 244: }\A 245: \A 246: @keyframes slide-in {\A 247:   0% {transform: translateX(0%);}\A 248:   100% {transform: translateX(100%);}"; }

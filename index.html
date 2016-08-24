@@ -18,6 +18,7 @@
     </style>
 </head>
 <body>
+
 <div id="header-wrapper">
     <div id="header">
         <h1>Zombie Outbreak</h1>
@@ -26,8 +27,13 @@
         <h2>Zombies are attacking Atlanta! Click directly on them to kill the brain eaters or drop a bomb to kill multiple undead. But beware... after a certain time the hoards of the walking dead will overwhelm you and the city will be lost. Can you survive?</h2>
     </div>
 </div>
+
 <div id='map'></div>
+
 <div id="stop" onclick="stop()"></div>
+
+<div id="message"></div>
+
 <div class="menu_goodies">
   <input type="checkbox" id="menu_opener_id" class="menu_opener" onclick='menuToggle()'> 
     <label for="menu_opener_id" class="menu_opener_label" onclick='menuToggle()'></label> 
@@ -36,8 +42,8 @@
     <a href="#" class="link_one link_general" id='restart'><div class='inside_content'><img src="img/glyphicons-366-restart.png"></div></a> 
     <a href="#" class="link_one link_general"><div class='inside_content' id='power' onclick="playOptions()"><img src="img/glyphicons-64-power.png"></div></a> 
 
-    <a href="#" class="link_two link_general"><div class='inside_content'><img src="img/glyphicons-647-ambulance.png"></div></a>
-    <a href="#" class="link_three link_general"><div class='inside_content'><img src="img/glyphicons-291-skull.png"></div></a>
+    <a href="#" class="link_two link_general"><div class='inside_content'><img src="img/chainsaw-icon.png"></div></a>
+    <a href="#" class="link_three link_general"><div class='inside_content'><img src="img/airstrike.png"></div></a>
     <a href="#" class="link_four link_general"><div class='inside_content'><img src="img/glyphicons-329-podium.png"></div></a>
     <div id="scoreboard" onclick="showScore()">0</div>
   </input>
