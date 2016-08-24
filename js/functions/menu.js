@@ -6,3 +6,32 @@ scoreboard.innerHTML = count;
 setTimeout(function(){
 	$('.menu_opener').prop('checked', true);
 },2000);
+
+function menuToggle(){ 
+  $('.menu_opener').prop('checked', !$('.menu_opener').prop("checked")); 
+} 
+ 
+$('#start').on('click', function(){ 
+    generation = setInterval(generateMarkers, 1000); 
+    playOptions(); 
+    menuToggle();
+    markerMover();
+    bombDelay();
+    chainsawDelay();
+}) 
+function showScore(){ 
+  $('#scoreboard').toggleClass('showMe'); 
+}; 
+ 
+function playOptions(){ 
+  $('#start').toggleClass('startMove'); 
+  $('#restart').toggleClass('restartMove'); 
+}
+
+function showScore(){
+  $('#scoreboard').toggleClass('showMe');
+};
+
+function stop(){
+	clearInterval(generation);
+}

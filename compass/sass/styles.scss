@@ -213,4 +213,33 @@ a {
 	0% {transform: scale(0.1);}
 	50% {transform: scale(1.0);}
 	100% {transform: scale(0.1);}
+} 
+ 
+#power{ 
+  z-index: 10; 
+} 
+ 
+.restartMove { 
+  top: 85px !important; 
+} 
+ 
+.startMove { 
+  left: 315px; 
+}
+
+#message {
+  position: absolute;
+  top: 600px;
+  left: -300px;
+  width: 300px;
+  height: 75px;
+  background-color: green;
+  z-index: 9000;
+  transition: all .5s ease-in;
+
+}
+
+.slide-in {
+  transform: translateX(100%);
+  -webkit-animation-fill-mode: forwards;
 }

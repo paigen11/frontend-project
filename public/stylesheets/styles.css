@@ -231,3 +231,35 @@ a {
     transform: scale(0.1);
   }
 }
+/* line 218, ../../compass/sass/styles.scss */
+#power {
+  z-index: 10;
+}
+
+/* line 222, ../../compass/sass/styles.scss */
+.restartMove {
+  top: 85px !important;
+}
+
+/* line 226, ../../compass/sass/styles.scss */
+.startMove {
+  left: 315px;
+}
+
+/* line 230, ../../compass/sass/styles.scss */
+#message {
+  position: absolute;
+  top: 600px;
+  left: -300px;
+  width: 300px;
+  height: 75px;
+  background-color: green;
+  z-index: 9000;
+  transition: all .5s ease-in;
+}
+
+/* line 242, ../../compass/sass/styles.scss */
+.slide-in {
+  transform: translateX(100%);
+  -webkit-animation-fill-mode: forwards;
+}
