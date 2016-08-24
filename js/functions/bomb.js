@@ -4,9 +4,6 @@ var bombAvailable = false;
 // bombSelected  is set to true on a click event, and will unlock the bomb weapon
 var bombSelected = false;
 
-// call bombDelay once to start weapon timer
-bombDelay();
-
 // click listener for weapon button
 $('.link_three').on('click', function() {
 	// only allow weapon to be selected if it is available
@@ -37,6 +34,7 @@ function bombDelay() {
 		setTimeout(function(){
 			bombAvailable = true;
 			$('.link_three').addClass('bomb-available');
+			newMessage("bomb ready!");
 		}, 10000);
 		
 	}

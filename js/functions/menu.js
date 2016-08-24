@@ -16,6 +16,8 @@ $('#start').on('click', function(){
     playOptions(); 
     menuToggle();
     markerMover();
+    bombDelay();
+    chainsawDelay();
 }) 
 function showScore(){ 
   $('#scoreboard').toggleClass('showMe'); 

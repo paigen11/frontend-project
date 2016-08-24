@@ -4,10 +4,6 @@ var chainsawAvailable = false;
 // chainsawSelected  is set to true on a click event, and will unlock the bomb weapon
 var chainsawSelected = false;
 
-
-// call chainsawDelay once to start weapon timer
-chainsawDelay();
-
 // click listener for weapon button
 $('.link_two').on('click', function() {
 	// only allow weapon to be selected if it is available
@@ -45,6 +41,6 @@ function chainsawDelay() {
 			chainsawAvailable = true;
 			$('.link_two').addClass('bomb-available');
 			newMessage("chainsaw ready!");
-		}, 5000);
+		}, 30000);
 	}
 }
