@@ -179,7 +179,7 @@ a {
 
 @keyframes flash {
 	0% {background-color: #FFA240};
-	50% {background-color: red};
+	50% {background-color: #F27002};
 	100% {background-color: #FFA240};
 }
 
@@ -219,7 +219,7 @@ a {
 } 
  
 .restartMove { 
-  top: 85px !important; 
+  left: 185px !important; 
 } 
  
 .startMove { 
@@ -246,4 +246,18 @@ a {
 .slide-in {
   transform: translateX(135%);
   -webkit-animation-fill-mode: forwards;
+}
+
+.danger-wrapper{
+  height: 50px;
+  width: 50px;
+  background: #FFA240;
+  z-index: 801;
+  position: absolute;
+  left: 250px;
+  top: 200px;
+  border-radius: 50px;
+  line-height: 50px;
+  text-align: center;
+  transition: all .5s ease;
 }

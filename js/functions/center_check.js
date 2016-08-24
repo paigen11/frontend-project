@@ -1,13 +1,18 @@
 setInterval(checkCenter, 1000);
-
 //checks if zombies are in the danger zone
 function checkCenter() {
-    var dangerZombies = [];
+	var dangerZombies = [];
+	var widthValue = 100;
 	for(i = 0; i < markerList.length; i++) {
 		if (getDistanceFromLatLonInKm(markerList[i]._latlng.lat, markerList[i]._latlng.lng, point[0], point[1]) < 12){
 			dangerZombies.push(markerList[i]);
 			howManyZombiesInside.innerHTML = dangerZombies.length;
 		}
+	}
+	if(dangerZombies.length > 0){
+		widthValue = widthValue * dangerZombies.length;
+		widthValue += 'px';
+		$('.danger-wrapper').css({'width':widthValue})
 	}
 }
 //where the count is displayed
