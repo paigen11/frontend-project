@@ -25,6 +25,7 @@ var myIcon = L.icon({iconUrl: 'img/zombie_stroke.png', className: 'my-div-icon',
 var corpseIcon = L.icon({iconUrl: 'img/zombie_corpse.png', className: 'my-div-icon', iconSize: [25,25]});
 var markerList = [];
 var generation;
+var centerChecker;
 
 var castle = L.icon({iconUrl: 'img/castle1.gif', iconSize: [40, 61]});
 L.marker([33.73804, -84.38324], {icon: castle}).addTo(map);

@@ -16,10 +16,11 @@ function menuToggle(){
 } 
  
 $('#start').on('click', function(){ 
-    generation = setInterval(generateMarkers, 1000); 
+    generation = setInterval(generateMarkers, 500); 
     playOptions(); 
     bombDelay();
     chainsawDelay();
+    centerChecker = setInterval(checkCenter, 1000);
 }) 
 function showScore(){ 
   $('#scoreboard').toggleClass('showMe'); 
@@ -34,6 +35,6 @@ function showScore(){
   $('#scoreboard').toggleClass('showMe');
 };
 
-function stop(){
-	clearInterval(generation);
-}
+// function stop(){
+// 	clearInterval(generation);
+// }

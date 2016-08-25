@@ -61,7 +61,7 @@ function generateMarkers() {
     var tempPoint = generateSpawn(point[0], point[1], .4);
     // console.log(tempPoint);
     // marker = L.marker.movingMarker([tempPoint.coordinates, [33.751447, -84.385372]] {icon: myIcon})
-    marker = L.Marker.movingMarker([tempPoint.coordinates, [33.751447, -84.385372]], [200000],{icon: myIcon})
+    marker = L.Marker.movingMarker([tempPoint.coordinates, [33.751447, -84.385372]], [15000],{icon: myIcon})
         .addTo(map)
         .on("click", function(e){
             if(bombSelected) {
@@ -112,10 +112,10 @@ function generateMarkers() {
 
 
 
-function stop(){
-	clearInterval(generation);
+// function stop(){
+// 	clearInterval(generation);
 
-}
+// }
 
 function distance(lat1, lon1, lat2, lon2, unit) {
 	var radlat1 = Math.PI * lat1/180
