@@ -14,9 +14,12 @@ function menuToggle(){
   $('#restart').removeClass('restartMove');
   $('#scoreboard').removeClass('showMe');
 } 
- 
+
+var interval;
+
 $('#start').on('click', function(){ 
-    generation = setInterval(generateMarkers, 500); 
+    // generation = setInterval(generateMarkers, 500); 
+    interval = setInterval(generateMarkers, spawnInterval);
     playOptions(); 
     bombDelay();
     chainsawDelay();

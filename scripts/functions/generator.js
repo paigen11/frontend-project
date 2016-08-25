@@ -10,6 +10,7 @@
 //     [-84.1703796387,33.9775311374]  // Northeast coordinates
 
 
+
 var point= [33.784010, -84.386030];
 var spawnPoints = [[34.006445, -84.215383]];
 
@@ -45,9 +46,9 @@ function generateSpawn(south, west, limit){
 	}else if(checkForSouth == 2 && checkForWest == 1){
 		coord.quad = 4;
 	}
-	console.log(coord);
+
 	var dist = distance(coord.coordinates[0], coord.coordinates[1], point[0], point[1], "M")
-	console.log(dist);
+
  	if(dist > 10){
  		return coord;
  		spawnPoints.push(coord);
@@ -57,10 +58,13 @@ function generateSpawn(south, west, limit){
 	// console.log(spawnPoints)
 }
 
+var spawnInterval = 1500;
+
+
+
 function generateMarkers() {
     var tempPoint = generateSpawn(point[0], point[1], .4);
-    // console.log(tempPoint);
-    // marker = L.marker.movingMarker([tempPoint.coordinates, [33.751447, -84.385372]] {icon: myIcon})
+
     marker = L.Marker.movingMarker([tempPoint.coordinates, [33.751447, -84.385372]], [15000],{icon: myIcon})
         .addTo(map)
         .on("click", function(e){
@@ -79,19 +83,23 @@ function generateMarkers() {
             	}
             	scoreboard.innerHTML++;
             }
-
-          
         })
         .on("mouseover", function(e){
         	sawed(this);
         });
+
     marker.start();
     //push marker coords to an array    
     markerList.push(marker);
     //if markerList is longer than X show test - this will eventually end the game when the player's overrun with zombies
     if(markerList.length > 10){
-        // console.log("test, test");
     }
+
+    clearInterval(interval);
+    if (spawnInterval > 600) {
+    	spawnInterval -= 10;
+    }
+	interval = setInterval(generateMarkers, spawnInterval);
 }   
 
 // function generateSwell(coord, interval){

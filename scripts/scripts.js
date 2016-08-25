@@ -3,13 +3,9 @@
 // create map
 var map = L.map('map', {
     center: [33.73804, -84.38324],
-    zoom: 9,
-    // leave maxBounds commented out for now
-    // maxBounds: [
-    //     [33.7993178, -84.328008],
-    //     [33.8486731, -84.3733132]
-    // ],
-    minZoom: 9,
+    zoom: 11,
+    // minZoom: 11,
+    // maxZoom: 11
 })
 
 map.doubleClickZoom.disable();
