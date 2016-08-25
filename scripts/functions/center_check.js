@@ -23,7 +23,7 @@ function checkCenter() {
 	if(dangerZombies.length >= 10){
 		howManyZombiesInside.innerHTML = "Game over man! Game over!";
 		function stop(){
-			clearInterval(generation);
+			clearInterval(interval);
 			clearInterval(checkCenter);
 		};
 		stop();
