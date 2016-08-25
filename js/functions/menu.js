@@ -18,7 +18,6 @@ function menuToggle(){
 $('#start').on('click', function(){ 
     generation = setInterval(generateMarkers, 1000); 
     playOptions(); 
-    markerMover();
     bombDelay();
     chainsawDelay();
 }) 

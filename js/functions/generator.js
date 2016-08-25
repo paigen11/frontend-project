@@ -60,7 +60,8 @@ function generateSpawn(south, west, limit){
 function generateMarkers() {
     var tempPoint = generateSpawn(point[0], point[1], .4);
     // console.log(tempPoint);
-    marker = L.marker(tempPoint.coordinates, {icon: myIcon})
+    // marker = L.marker.movingMarker([tempPoint.coordinates, [33.751447, -84.385372]] {icon: myIcon})
+    marker = L.Marker.movingMarker([tempPoint.coordinates, [33.751447, -84.385372]], [200000],{icon: myIcon})
         .addTo(map)
         .on("click", function(e){
             if(bombSelected) {
@@ -84,6 +85,7 @@ function generateMarkers() {
         .on("mouseover", function(e){
         	sawed(this);
         });
+    marker.start();
     //push marker coords to an array    
     markerList.push(marker);
     //if markerList is longer than X show test - this will eventually end the game when the player's overrun with zombies
