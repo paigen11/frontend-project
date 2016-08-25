@@ -110,8 +110,6 @@ function generateMarkers() {
 // 	return newCoord;
 // }
 
-
-
 // function stop(){
 // 	clearInterval(generation);
 

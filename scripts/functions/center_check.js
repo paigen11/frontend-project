@@ -21,16 +21,15 @@ function checkCenter() {
 		$('.danger-wrapper').toggleClass('bomb-available');
 	}
 	if(dangerZombies.length >= 10){
-		howManyZombiesInside.innerHTML = "GAME OVER MAN!!! GAME OVER!!!";
+		howManyZombiesInside.innerHTML = "Game over man! Game over!";
 		function stop(){
 			clearInterval(generation);
-			clearInterval(centerChecker);
-		}
+			clearInterval(checkCenter);
+		};
 		stop();
-		widthValue = '200 px';
-		$('.danger-wrapper').css({'width':widthValue})
+		widthValue = '300px';
+		$('.danger-wrapper').css({'width':widthValue});
 	}
-
 }
 //where the count is displayed
 var howManyZombiesInside = document.getElementById('danger_meter');
