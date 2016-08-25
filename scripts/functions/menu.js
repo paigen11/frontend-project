@@ -1,6 +1,9 @@
 var count = 0;
 var scoreboard = document.getElementById('scoreboard');
 scoreboard.innerHTML = count;
+var minePlaced = false;
+var mineListen;
+var mineWatch;
 
 // open menu automatically on page load
 setTimeout(function(){
@@ -17,8 +20,6 @@ function menuToggle(){
   $('#scoreboard').removeClass('showMe');
 } 
 
-var interval;
-
 $('#start').on('click', function(){ 
     // generation = setInterval(generateMarkers, 500); 
     interval = setInterval(generateMarkers, spawnInterval);
@@ -27,6 +28,7 @@ $('#start').on('click', function(){
     mineDelay();
     chainsawDelay();
     centerChecker = setInterval(checkCenter, 1000);
+    mineListen = setInterval(amIPlaced, 1000);
 }) 
 function showScore(){ 
   $('#scoreboard').toggleClass('showMe'); 

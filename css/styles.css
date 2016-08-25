@@ -333,10 +333,10 @@ a {
 /* line 306, ../compass/sass/styles.scss */
 .chainsawMove {
   left: 410px !important;
+  top: 315px;
 }
 
-/* line 310, ../compass/sass/styles.scss */
+/* line 311, ../compass/sass/styles.scss */
 .mineMove {
   left: 410px !important;
-  top: 315px;
 }

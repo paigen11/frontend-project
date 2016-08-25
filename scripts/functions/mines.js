@@ -2,33 +2,45 @@
 var mineAvailable = false;
 // bombSelected  is set to true on a click event, and will unlock the bomb weapon
 var mineSelected = false;
+var theMine;
+
 
 $('#mine').on('click', function() {
 	// only allow weapon to be selected if it is available
 	if(mineAvailable){
 		mineSelected = true;
 		$('#mine').removeClass('bomb-available');
+		$('#mine').toggleClass('mineMove');
 		$('body, .leaflet-interactive').addClass('bomb-cursor');
 	}
 })
+
+var mineTouched = false;
+var mineCheck;
 //have mines check their own radius
 function MineAreaCheck() {
-	var mineTouched = false;
-	if (getDistanceFromLatLonInKm(markerList[i]._latlng.lat, markerList[i]._latlng.lng, point[0], point[1]) < 6){
-		mineAreaEffect(circle);
+	var trappedZombies = [];
+	if(trappedZombies.length < 1000){
+		for(i = 0; i < markerList.length; i++) {
+			if (getDistanceFromLatLonInKm(markerList[i]._latlng.lat, markerList[i]._latlng.lng, theMine._latlng.lat, theMine._latlng.lng) < 4){
+				trappedZombies.push(markerList[i]);
+				mineTouched = true;
+				mineAreaEffect(theMine);
+				console.log('zombie inside!');
+			}
+		}
 	}
 }
 
-// function onMapClickMines(e) {
-//     if (mineSelected) {
-// 	    var circle = L.circle(e.latlng, 6000, {color: 'red'}).addTo(map);
-// 	    MineAreaCheck();
-//     	mineAvailable = false;
-//     	mineSelected = false;
-//     	$('body, .leaflet-interactive').removeClass('bomb-cursor');
-//     	mineDelay();
-//     }
-// }
+function onMapClickMines(e) {
+    if (mineSelected) {
+	    theMine = L.circle(e.latlng, 4000, {color: 'red'}).addTo(map);
+	    minePlaced = true;
+    	mineAvailable = false;
+    	mineSelected = false;
+    	$('body, .leaflet-interactive').removeClass('bomb-cursor');
+    }
+}
 
 // if weapon is not available, set timer for it to become available again.
 function mineDelay() {
@@ -37,9 +49,9 @@ function mineDelay() {
 			mineAvailable = true;
 			$('#mine').addClass('mine_btn');
 			$('#mine').addClass('bomb-available');
-			$('#mine').addClass('mineMove');
+			$('#mine').toggleClass('mineMove');
 			 newMessage("Place a mine as a trap for zombies!"); 
-		}, 40000);
+		}, 15000);
 		
 	}
 }
@@ -48,8 +60,9 @@ function mineDelay() {
 // of the weapon's effect, remove markers from array and map, and update score.
 function mineAreaEffect(circle) {
 	var killedMarkers = [];
+	theMine.setRadius(8000);
 	for(i = 0; i < markerList.length; i++) {
-		if (getDistanceFromLatLonInKm(markerList[i]._latlng.lat, markerList[i]._latlng.lng, circle._latlng.lat, circle._latlng.lng) < 8){
+		if (getDistanceFromLatLonInKm(markerList[i]._latlng.lat, markerList[i]._latlng.lng, theMine._latlng.lat, theMine._latlng.lng) < 8){
 			markerList[i].setIcon(corpseIcon);
 			killedMarkers.push(markerList[i])
 
@@ -63,8 +76,14 @@ function mineAreaEffect(circle) {
 			scoreboard.innerHTML++;
 		}
 	}
+	mineDelay();
 	setTimeout(function() {
 		// remove weapon polygon from map when animation is done
 		map.removeLayer(circle)
-	}, 1000)
+	}, 500)
+}
+function amIPlaced(){
+	if(minePlaced == true){
+		mineWatch = setInterval(MineAreaCheck, 500);
+	}
 }

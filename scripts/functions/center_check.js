@@ -24,7 +24,7 @@ function checkCenter() {
 		howManyZombiesInside.innerHTML = "Game over man! Game over!";
 		function stop(){
 			clearInterval(interval);
-			clearInterval(checkCenter);
+			clearInterval(centerChecker);
 		};
 		stop();
 		widthValue = '300px';

@@ -10,6 +10,7 @@ $('#chainsaw').on('click', function() {
 	if(chainsawAvailable){
 		chainsawSelected = true;
 		$('#chainsaw').removeClass('bomb-available');
+		$('#chainsaw').toggleClass('chainsawMove');
 		$('body, .leaflet-interactive').addClass('chainsaw-cursor');
 	}
 	
