@@ -34,7 +34,7 @@ function bombDelay() {
 		setTimeout(function(){
 			bombAvailable = true;
 			$('.link_three').addClass('bomb-available');
-			 newMessage("The bomb's about to go off! Wipe out a bunch of zombies with one hit."); 
+			 newMessage("Bomb ready! Wipe out a bunch of zombies with one hit."); 
 		}, 10000);
 		
 	}
@@ -44,6 +44,8 @@ function bombDelay() {
 // of the weapon's effect, remove markers from array and map, and update score.
 function areaEffect(circle) {
 	var killedMarkers = [];
+	flyOver(circle);
+	
 	for(i = 0; i < markerList.length; i++) {
 		if (getDistanceFromLatLonInKm(markerList[i]._latlng.lat, markerList[i]._latlng.lng, circle._latlng.lat, circle._latlng.lng) < 8){
 			markerList[i].setIcon(corpseIcon);
@@ -84,3 +86,19 @@ function deg2rad(deg) {
 	return deg * (Math.PI/180)
 }
 
+function flyOver(circle){
+	var startingLat = circle._latlng.lat - .3;
+	var startingLon = circle._latlng.lng - .3;
+	var targetLat = circle._latlng.lat + .3;
+	var targetLon = circle._latlng.lng + .3;
+	var jetIcon = L.icon({iconUrl: 'img/jet.png', className: 'my-div-icon', iconSize: [50,50]});
+	// jet = L.Marker.movingMarker([[33.506761, -84.667488], [34.050127, -84.012538]], [1000], {icon: jetIcon})
+ //        .addTo(map)
+ 	jet = L.Marker.movingMarker([[startingLat, startingLon], [targetLat, targetLon]], [1000], {icon: jetIcon})
+    	.addTo(map)
+    jet.start()
+
+    setTimeout(function(){
+    	map.removeLayer(jet)
+    },2000, jet)
+}
