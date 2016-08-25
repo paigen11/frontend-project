@@ -19,16 +19,16 @@ function MineAreaCheck() {
 	}
 }
 
-function onMapClick(e) {
-    if (mineSelected) {
-	    var circle = L.circle(e.latlng, 6000, {color: 'red'}).addTo(map);
-	    MineAreaCheck();
-    	mineAvailable = false;
-    	mineSelected = false;
-    	$('body, .leaflet-interactive').removeClass('bomb-cursor');
-    	mineDelay();
-    }
-}
+// function onMapClickMines(e) {
+//     if (mineSelected) {
+// 	    var circle = L.circle(e.latlng, 6000, {color: 'red'}).addTo(map);
+// 	    MineAreaCheck();
+//     	mineAvailable = false;
+//     	mineSelected = false;
+//     	$('body, .leaflet-interactive').removeClass('bomb-cursor');
+//     	mineDelay();
+//     }
+// }
 
 // if weapon is not available, set timer for it to become available again.
 function mineDelay() {
