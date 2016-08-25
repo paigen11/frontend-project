@@ -5,11 +5,11 @@ var chainsawAvailable = false;
 var chainsawSelected = false;
 
 // click listener for weapon button
-$('.link_two').on('click', function() {
+$('#chainsaw').on('click', function() {
 	// only allow weapon to be selected if it is available
 	if(chainsawAvailable){
 		chainsawSelected = true;
-		$('.link_two').removeClass('bomb-available');
+		$('#chainsaw').removeClass('bomb-available');
 		$('body, .leaflet-interactive').addClass('chainsaw-cursor');
 	}
 	
@@ -32,7 +32,6 @@ function sawed(marker){
 		setTimeout(function(){
 			chainsawAvailable = false;
 			chainsawSelected = false;
-			$('.link_two').removeClass('bomb-available');
 			$('body, .leaflet-interactive').removeClass('chainsaw-cursor');
 			chainsawDelay();
 		}, 5000)
@@ -43,7 +42,8 @@ function chainsawDelay() {
 	if(!chainsawAvailable) {
 		setTimeout(function(){
 			chainsawAvailable = true;
-			$('.link_two').addClass('bomb-available');
+			$('#chainsaw').addClass('bomb-available');
+			$('#chainsaw').toggleClass('chainsawMove');
 			newMessage("The chainsaw is ready to mow down some undead! Just hover over them to kill 'em.");
 		}, 30000);
 	}

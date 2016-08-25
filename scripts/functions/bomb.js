@@ -21,9 +21,7 @@ function onMapClick(e) {
     	areaEffect(circle);
     	bombAvailable = false;
     	bombSelected = false;
-    	$('#bomb').removeClass('bomb-available');
     	$('body, .leaflet-interactive').removeClass('bomb-cursor');
-
     	bombDelay();
     }
 }
@@ -33,8 +31,10 @@ function bombDelay() {
 	if (!bombAvailable) {
 		setTimeout(function(){
 			bombAvailable = true;
+			$('#bomb').addClass('bomb_btn');
 			$('#bomb').addClass('bomb-available');
-			 newMessage("Bomb ready! Wipe out a bunch of zombies with one hit."); 
+			$('#bomb').addClass('bombMove');
+			newMessage("Bomb ready! Wipe out a bunch of zombies with one hit."); 
 		}, 10000);
 		
 	}

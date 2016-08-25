@@ -3,11 +3,11 @@ var mineAvailable = false;
 // bombSelected  is set to true on a click event, and will unlock the bomb weapon
 var mineSelected = false;
 
-$('.link_three').on('click', function() {
+$('#mine').on('click', function() {
 	// only allow weapon to be selected if it is available
 	if(mineAvailable){
 		mineSelected = true;
-		$('.link_three').removeClass('bomb-available');
+		$('#mine').removeClass('bomb-available');
 		$('body, .leaflet-interactive').addClass('bomb-cursor');
 	}
 })
@@ -21,10 +21,10 @@ function MineAreaCheck() {
 
 function onMapClick(e) {
     if (mineSelected) {
-	    var circle = L.circle(e.latlng, 8000, {color: 'red'}).addTo(map);
+	    var circle = L.circle(e.latlng, 6000, {color: 'red'}).addTo(map);
+	    MineAreaCheck();
     	mineAvailable = false;
     	mineSelected = false;
-    	$('.link_three').removeClass('bomb-available');
     	$('body, .leaflet-interactive').removeClass('bomb-cursor');
     	mineDelay();
     }
@@ -35,9 +35,11 @@ function mineDelay() {
 	if (!mineAvailable) {
 		setTimeout(function(){
 			mineAvailable = true;
-			$('.link_three').addClass('bomb-available');
+			$('#mine').addClass('mine_btn');
+			$('#mine').addClass('bomb-available');
+			$('#mine').addClass('mineMove');
 			 newMessage("Place a mine as a trap for zombies!"); 
-		}, 15000);
+		}, 40000);
 		
 	}
 }
