@@ -5,11 +5,11 @@ var bombAvailable = false;
 var bombSelected = false;
 
 // click listener for weapon button
-$('.link_three').on('click', function() {
+$('#bomb').on('click', function() {
 	// only allow weapon to be selected if it is available
 	if(bombAvailable){
 		bombSelected = true;
-		$('.link_three').removeClass('bomb-available');
+		$('#bomb').removeClass('bomb-available');
 		$('body, .leaflet-interactive').addClass('bomb-cursor');
 	}
 })
@@ -21,7 +21,7 @@ function onMapClick(e) {
     	areaEffect(circle);
     	bombAvailable = false;
     	bombSelected = false;
-    	$('.link_three').removeClass('bomb-available');
+    	$('#bomb').removeClass('bomb-available');
     	$('body, .leaflet-interactive').removeClass('bomb-cursor');
 
     	bombDelay();
@@ -33,7 +33,7 @@ function bombDelay() {
 	if (!bombAvailable) {
 		setTimeout(function(){
 			bombAvailable = true;
-			$('.link_three').addClass('bomb-available');
+			$('#bomb').addClass('bomb-available');
 			 newMessage("Bomb ready! Wipe out a bunch of zombies with one hit."); 
 		}, 10000);
 		

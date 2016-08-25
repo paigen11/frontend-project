@@ -41,6 +41,12 @@ function showScore(){
   $('#scoreboard').toggleClass('showMe');
 };
 
+function attackOptions(){
+	$('.bomb_btn').toggleClass('bombMove');
+	$('.chainsaw_btn').toggleClass('chainsawMove');
+	$('.mine_btn').toggleClass('mineMove');
+}
+
 // function stop(){
 // 	clearInterval(generation);
 // }
