@@ -317,3 +317,26 @@ a {
   text-align: center;
   transition: all .5s ease;
 }
+
+/* line 295, ../../compass/sass/styles.scss */
+.glyph_size img {
+  height: 26px;
+  width: auto;
+  z-index: 11;
+}
+
+/* line 302, ../../compass/sass/styles.scss */
+.bombMove {
+  top: 315px;
+}
+
+/* line 306, ../../compass/sass/styles.scss */
+.chainsawMove {
+  top: 380px;
+}
+
+/* line 310, ../../compass/sass/styles.scss */
+.mineMove {
+  left: 410px;
+  top: 315px;
+}
