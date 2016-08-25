@@ -15,17 +15,16 @@ $('#mine').on('click', function() {
 	}
 })
 
-var mineTouched = false;
 var mineCheck;
 //have mines check their own radius
 function MineAreaCheck() {
 	var trappedZombies = [];
 	if(trappedZombies.length < 1000){
 		for(i = 0; i < markerList.length; i++) {
-			if (getDistanceFromLatLonInKm(markerList[i]._latlng.lat, markerList[i]._latlng.lng, theMine._latlng.lat, theMine._latlng.lng) < 4){
+			if (getDistanceFromLatLonInKm(markerList[i]._latlng.lat, markerList[i]._latlng.lng, theMine._latlng.lat, theMine._latlng.lng) < 3){
 				trappedZombies.push(markerList[i]);
-				mineTouched = true;
 				mineAreaEffect(theMine);
+				minePlaced = false;
 				console.log('zombie inside!');
 			}
 		}
@@ -34,7 +33,7 @@ function MineAreaCheck() {
 
 function onMapClickMines(e) {
     if (mineSelected) {
-	    theMine = L.circle(e.latlng, 4000, {color: 'red'}).addTo(map);
+	    theMine = L.circle(e.latlng, 3000, {color: 'red'}).addTo(map);
 	    minePlaced = true;
     	mineAvailable = false;
     	mineSelected = false;
