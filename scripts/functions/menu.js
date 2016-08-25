@@ -5,6 +5,8 @@ scoreboard.innerHTML = count;
 // open menu automatically on page load
 setTimeout(function(){
 	$('.menu_opener').prop('checked', true);
+	playOptions();
+	$('#start').toggleClass('bomb-available');
 	showScore();
 },2000);
 
@@ -22,6 +24,7 @@ $('#start').on('click', function(){
     interval = setInterval(generateMarkers, spawnInterval);
     playOptions(); 
     bombDelay();
+    mineDelay();
     chainsawDelay();
     centerChecker = setInterval(checkCenter, 1000);
 }) 
@@ -31,7 +34,7 @@ function showScore(){
  
 function playOptions(){ 
   $('#start').toggleClass('startMove'); 
-  $('#restart').toggleClass('restartMove'); 
+  $('#restart').toggleClass('restartMove');
 }
 
 function showScore(){

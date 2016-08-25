@@ -290,3 +290,23 @@ a {
   text-align: center;
   transition: all .5s ease;
 }
+
+.glyph_size{
+  img{
+    height: 26px;
+    width: auto;
+    z-index: 11;
+  }
+}
+
+.bombMove{
+  top: 315px;
+}
+
+.chainsawMove{
+  top: 380px;
+}
+
+.mineMove{
+  top: 445px;
+}
