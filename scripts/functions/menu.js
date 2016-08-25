@@ -20,6 +20,7 @@ $('#start').on('click', function(){
     playOptions(); 
     bombDelay();
     chainsawDelay();
+    centerChecker = setInterval(checkCenter, 1000);
 }) 
 function showScore(){ 
   $('#scoreboard').toggleClass('showMe'); 
@@ -34,6 +35,6 @@ function showScore(){
   $('#scoreboard').toggleClass('showMe');
 };
 
-function stop(){
-	clearInterval(generation);
-}
+// function stop(){
+// 	clearInterval(generation);
+// }

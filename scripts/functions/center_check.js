@@ -2,6 +2,7 @@ setInterval(checkCenter, 1000);
 //checks if zombies are in the danger zone
 function checkCenter() {
 	var dangerZombies = [];
+	console.log(dangerZombies);
 	var widthValue = 50;
 	for(i = 0; i < markerList.length; i++) {
 		if (getDistanceFromLatLonInKm(markerList[i]._latlng.lat, markerList[i]._latlng.lng, point[0], point[1]) < 12){
@@ -9,13 +10,23 @@ function checkCenter() {
 			howManyZombiesInside.innerHTML = dangerZombies.length;
 		}
 	}
-	if(dangerZombies.length > 0){
+	if(dangerZombies.length > 0 && dangerZombies.length < 10){
 		widthValue = widthValue * dangerZombies.length;
 		widthValue += 'px';
 		$('.danger-wrapper').css({'width':widthValue})
 	}
-	if(dangerZombies.length > 5){
+	if(dangerZombies.length > 5 && dangerZombies.length < 10){
 		$('.danger-wrapper').toggleClass('bomb-available');
+	}
+	if(dangerZombies.length >= 10){
+		howManyZombiesInside.innerHTML = "Game over man! Game over!";
+		function stop(){
+			clearInterval(generation);
+			clearInterval(checkCenter);
+		};
+		stop();
+		widthValue = '300px';
+		$('.danger-wrapper').css({'width':widthValue});
 	}
 }
 //where the count is displayed
