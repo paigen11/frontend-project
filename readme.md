@@ -83,10 +83,10 @@ It's safe to say the plans for this game got bigger and grander as the week prog
 
 ##Authors
 ---
-  * Eric Ettensohn
-  * Paige Niedringhaus
-  * David Pirie
-  * JT Townsend
+  * [Eric Ettensohn](https://github.com/ericettensohn)
+  * [Paige Niedringhaus](https://github.com/paigen11/)
+  * [David Pirie](https://github.com/PirieD704)
+  * [JT Townsend](https://github.com/jttwnsnd)
 
 ##Github Link
 ---
