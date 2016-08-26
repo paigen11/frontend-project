@@ -30,5 +30,5 @@ var markerList = [];
 var generation;
 var centerChecker;
 
-var castle = L.icon({iconUrl: 'img/castle1.gif', iconSize: [40, 61]});
+var castle = L.icon({iconUrl: '../img/center_building.png', iconSize: [96, 96]});
 var home = L.marker([33.73804, -84.38324], {icon: castle, clickable: 'false', zIndexOffset: '-10000'}).addTo(map);

@@ -25,6 +25,7 @@ function checkCenter() {
 		function stop(){
 			clearInterval(interval);
 			clearInterval(centerChecker);
+			explosion();
 		};
 		stop();
 		widthValue = '300px';
