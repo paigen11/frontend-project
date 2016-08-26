@@ -35,7 +35,7 @@ body {
   src: url("../../fonts/ZOMBIE.TTF");
 }
 /* line 59, ../compass/sass/styles.scss */
-#danger_meter, #scoreboard {
+#danger_meter, #message, #end-message, #scoreboard {
   font-family: Zombie, arial;
 }
 
@@ -257,7 +257,7 @@ a {
   transform-origin: 50% 50% !important;
 }
 
-/* line 244, ../compass/sass/styles.scss */
+/* line 246, ../compass/sass/styles.scss */
 .pulseCustom2 {
   animation: pulse 1s ease-out;
   transform-origin: 50% 50% !important;
@@ -274,22 +274,22 @@ a {
     transform: scale(0.1);
   }
 }
-/* line 255, ../compass/sass/styles.scss */
+/* line 257, ../compass/sass/styles.scss */
 #power {
   z-index: 10;
 }
 
-/* line 259, ../compass/sass/styles.scss */
+/* line 261, ../compass/sass/styles.scss */
 .restartMove {
   left: 185px !important;
 }
 
-/* line 263, ../compass/sass/styles.scss */
+/* line 265, ../compass/sass/styles.scss */
 .startMove {
   left: 315px;
 }
 
-/* line 267, ../compass/sass/styles.scss */
+/* line 269, ../compass/sass/styles.scss */
 #message {
   position: absolute;
   top: 400px;
@@ -302,19 +302,38 @@ a {
   border-radius: 5px;
 }
 
-/* line 279, ../compass/sass/styles.scss */
+/* line 281, ../compass/sass/styles.scss */
+#end-message {
+  position: absolute;
+  top: -100px;
+  left: 500px;
+  width: 300px;
+  height: 75px;
+  background-color: #FFA240;
+  z-index: 9000;
+  transition: all .5s ease-in;
+  border-radius: 5px;
+}
+
+/* line 293, ../compass/sass/styles.scss */
 .message-text {
   font-family: Zombie, arial;
   text-align: center;
 }
 
-/* line 284, ../compass/sass/styles.scss */
+/* line 298, ../compass/sass/styles.scss */
 .slide-in {
   transform: translateX(135%);
   -webkit-animation-fill-mode: forwards;
 }
 
-/* line 289, ../compass/sass/styles.scss */
+/* line 303, ../compass/sass/styles.scss */
+.slide-down {
+  transform: translateY(400%);
+  -webkit-animation-fill-mode: forwards;
+}
+
+/* line 308, ../compass/sass/styles.scss */
 .danger-wrapper {
   height: 50px;
   width: 50px;
@@ -329,25 +348,25 @@ a {
   transition: all .5s ease;
 }
 
-/* line 304, ../compass/sass/styles.scss */
+/* line 323, ../compass/sass/styles.scss */
 .glyph_size img {
   height: 26px;
   width: auto;
   z-index: 11;
 }
 
-/* line 311, ../compass/sass/styles.scss */
+/* line 330, ../compass/sass/styles.scss */
 .bombMove {
   top: 315px;
 }
 
-/* line 315, ../compass/sass/styles.scss */
+/* line 334, ../compass/sass/styles.scss */
 .chainsawMove {
   left: 410px !important;
   top: 315px;
 }
 
-/* line 320, ../compass/sass/styles.scss */
+/* line 339, ../compass/sass/styles.scss */
 .mineMove {
   left: 410px !important;
 }
