@@ -27,6 +27,8 @@ function checkCenter() {
 			clearInterval(centerChecker);
 			explosion();
 			endMessage('Game Over! Click Reset');
+			playOptions();
+			$('#reset').addClass('bomb-available');
 			// $('#mine').removeClass('bomb-available');
 			// $('#mine').removeClass('mineMove');
 			$('#chainsaw').removeClass('bomb-available');
