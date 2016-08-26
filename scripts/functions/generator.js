@@ -96,7 +96,7 @@ function generateMarkers() {
     }
 
     clearInterval(interval);
-    if (spawnInterval > 400) {
+    if (spawnInterval > 600) {
     	spawnInterval -= 10;
     }
 	interval = setInterval(generateMarkers, spawnInterval);
