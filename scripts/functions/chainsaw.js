@@ -48,6 +48,6 @@ function chainsawDelay() {
 			$('#chainsaw').addClass('bomb-available');
 			$('#chainsaw').addClass('chainsawMove');
 			newMessage("The chainsaw is ready to mow down some undead! Just hover over them to kill 'em.");
-		}, 30000);
+		}, 15000);
 	}
 }

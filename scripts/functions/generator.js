@@ -65,7 +65,7 @@ var spawnInterval = 1500;
 function generateMarkers() {
     var tempPoint = generateSpawn(point[0], point[1], .4);
 
-    marker = L.Marker.movingMarker([tempPoint.coordinates, [33.751447, -84.385372]], [15000],{icon: myIcon})
+    marker = L.Marker.movingMarker([tempPoint.coordinates, [33.751447, -84.385372]], [20000],{icon: myIcon})
         .addTo(map)
         .on("click", function(e){
             if(bombSelected) {

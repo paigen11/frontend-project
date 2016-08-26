@@ -20,6 +20,8 @@ function onMapClick(e) {
     if (bombSelected) {
 	    var circle = L.circle(e.latlng, 8000, {color: 'red'}).setStyle({className: "pulseCustom"}).addTo(map);
     	areaEffect(circle);
+		newExplosion = L.marker([circle._latlng.lat, circle._latlng.lng], {icon: blankIcon}).addTo(map)
+		explosionUniversal(newExplosion);
     	bombAvailable = false;
     	bombSelected = false;
     	$('body, .leaflet-interactive').removeClass('bomb-cursor');
@@ -52,6 +54,7 @@ function areaEffect(circle) {
 			markerList[i].setIcon(corpseIcon);
 			killedMarkers.push(markerList[i])
 
+
 			setTimeout(function(){
 				for(j = 0; j < killedMarkers.length; j++) {
 					map.removeLayer(killedMarkers[j])
@@ -60,6 +63,7 @@ function areaEffect(circle) {
 			
 			markerList.splice(i, 1);
 			scoreboard.innerHTML++;
+
 		}
 	}
 	setTimeout(function() {
