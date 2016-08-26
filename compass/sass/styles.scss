@@ -20,6 +20,8 @@
 // @import "views/payment";
 // @import "views/account";
 
+$zombie_orange: #FFA240;
+
  body { 
   margin:0; 
   padding:0; 
@@ -120,7 +122,7 @@ h1, h2{
   left: 235.5px;
 }
 .menu_opener_label {
-  background: #FFA240;
+  background: $zombie_orange;
   width: 100px;
   height: 100px;
   display: block;
@@ -174,7 +176,7 @@ h1, h2{
   position: absolute;
   top: 250px;
   left: 250px;
-  background: #FFA240;
+  background: $zombie_orange;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
@@ -213,9 +215,9 @@ a {
 }
 
 @keyframes flash {
-	0% {background-color: #FFA240};
+	0% {background-color: $zombie_orange};
 	50% {background-color: #F27002};
-	100% {background-color: #FFA240};
+	100% {background-color: $zombie_orange};
 }
 
 #scoreboard{
@@ -226,7 +228,7 @@ a {
 	border-radius: 500px;
 	top: 250px;
 	left: 250px;
-	background: #FFA240;
+	background: $zombie_orange;
 	text-align: center;
 	line-height: 20px;
 	opacity: 0;
@@ -272,7 +274,7 @@ a {
   left: -300px;
   width: 300px;
   height: 75px;
-  background-color: #FFA240; 
+  background-color: $zombie_orange; 
   z-index: 9000; 
   transition: all .5s ease-in; 
   border-radius: 5px; 
@@ -284,7 +286,7 @@ a {
   left: 500px;
   width: 300px;
   height: 75px;
-  background-color: #FFA240; 
+  background-color: $zombie_orange; 
   z-index: 9000; 
   transition: all .5s ease-in; 
   border-radius: 5px; 
@@ -313,7 +315,7 @@ a {
 .danger-wrapper{
   height: 50px;
   width: 50px;
-  background: #FFA240;
+  background: $zombie_orange;
   z-index: 801;
   position: absolute;
   left: 250px;
