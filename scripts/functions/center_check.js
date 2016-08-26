@@ -6,7 +6,7 @@ function checkCenter() {
 	var widthValue = 50;
 	if(dangerZombies.length < 15){
 		for(i = 0; i < markerList.length; i++) {
-			if (getDistanceFromLatLonInKm(markerList[i]._latlng.lat, markerList[i]._latlng.lng, point[0], point[1]) < 8){
+			if (getDistanceFromLatLonInKm(markerList[i]._latlng.lat, markerList[i]._latlng.lng, point[0], point[1]) < 6){
 				dangerZombies.push(markerList[i]);
 				howManyZombiesInside.innerHTML = dangerZombies.length;
 			}

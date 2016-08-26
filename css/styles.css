@@ -322,18 +322,24 @@ a {
 }
 
 /* line 298, ../compass/sass/styles.scss */
+.end-message-text {
+  font-family: Zombie, arial;
+  text-align: center;
+}
+
+/* line 303, ../compass/sass/styles.scss */
 .slide-in {
   transform: translateX(135%);
   -webkit-animation-fill-mode: forwards;
 }
 
-/* line 303, ../compass/sass/styles.scss */
+/* line 308, ../compass/sass/styles.scss */
 .slide-down {
   transform: translateY(400%);
   -webkit-animation-fill-mode: forwards;
 }
 
-/* line 308, ../compass/sass/styles.scss */
+/* line 313, ../compass/sass/styles.scss */
 .danger-wrapper {
   height: 50px;
   width: 50px;
@@ -348,25 +354,25 @@ a {
   transition: all .5s ease;
 }
 
-/* line 323, ../compass/sass/styles.scss */
+/* line 328, ../compass/sass/styles.scss */
 .glyph_size img {
   height: 26px;
   width: auto;
   z-index: 11;
 }
 
-/* line 330, ../compass/sass/styles.scss */
+/* line 335, ../compass/sass/styles.scss */
 .bombMove {
   top: 315px;
 }
 
-/* line 334, ../compass/sass/styles.scss */
+/* line 339, ../compass/sass/styles.scss */
 .chainsawMove {
   left: 410px !important;
   top: 315px;
 }
 
-/* line 339, ../compass/sass/styles.scss */
+/* line 344, ../compass/sass/styles.scss */
 .mineMove {
   left: 410px !important;
 }
