@@ -52,7 +52,7 @@ function mineDelay() {
 			$('#mine').addClass('mine_btn');
 			$('#mine').addClass('bomb-available');
 			$('#mine').toggleClass('mineMove');
-			 newMessage("Place a mine as a trap for zombies!"); 
+			 newMessage("Blow those zombies away with a land mine trap!"); 
 		}, 10000);
 		
 	}
