@@ -41,7 +41,7 @@ This project was not without its stumbling blocks from the beginning. We solved 
 
     The problem was how to allow the user to select from these different weapons (and also start a new game, see their kill score, etc.). The answer came in the form of a floating menu bar. The buttons on the bar allowed users to select the bomb option (which was set to a timer so it was only available after a certain amount of time passed) or the chainsaw option (with the same sort of timer system), it also had a start button and a kill score counter featuring just how many zombies had already been eliminated.
 
-    * Challenge #4: Making the zombies move
+  * Challenge #4: Making the zombies move
     A zombie outbreak game is a great idea, but it's not nearly as much fun if the zombies don't converge and kill any remaining survivors. We were bound and determined to get the zombies randomly generating on our map to move, and so we set the centerpoint of the map as the location we wanted them all to move towards. That way, players would have to defend the castle there, or be overrun and the game would be over. 
 
     This decision to make them mobile proved harder than we anticipated. The first approach we tried to get the zombies to move involved higher level math the likes of which hadn't been seen since our days of AP Calculus in high school. The first step involved making sure the zombies spawned outside of a certain radius of the center of the map (to give the player a fighting chance). So a circular radius from the centerpoint was determined and if the random point for a zombie was defined inside of that radius the calculation picking a point would run again until it was outside the circle. Ok. So far, so good.
