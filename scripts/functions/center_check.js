@@ -26,6 +26,16 @@ function checkCenter() {
 			clearInterval(interval);
 			clearInterval(centerChecker);
 			explosion();
+			endMessage('Game Over! Click Reset');
+			// $('#mine').removeClass('bomb-available');
+			// $('#mine').removeClass('mineMove');
+			$('#chainsaw').removeClass('bomb-available');
+			$('#chainsaw').removeClass('chainsawMove');
+			$('#bomb').removeClass('bomb-available');
+			$('#bomb').removeClass('bombMove');
+			for(var i = 0; i < markerList.length; i++){
+				map.removeLayer(markerList[i]);
+			}
 		};
 		stop();
 		widthValue = '300px';

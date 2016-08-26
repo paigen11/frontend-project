@@ -11,7 +11,6 @@ $('#bomb').on('click', function() {
 	if(bombAvailable){
 		bombSelected = true;
 		$('#bomb').removeClass('bomb-available');
-		$('#bomb').toggleClass('bombMove');
 		$('body, .leaflet-interactive').addClass('bomb-cursor');
 	}
 })
