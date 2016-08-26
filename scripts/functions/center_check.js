@@ -1,7 +1,7 @@
 
 //checks if zombies are in the danger zone
 function checkCenter() {
-	var dangerZombies = [];
+	dangerZombies = [];
 	// console.log(dangerZombies);
 	var widthValue = 50;
 	if(dangerZombies.length < 10){

@@ -3,6 +3,7 @@
 var chainsawAvailable = false;
 // chainsawSelected  is set to true on a click event, and will unlock the bomb weapon
 var chainsawSelected = false;
+var myChainsaw;
 
 // click listener for weapon button
 $('#chainsaw').on('click', function() {
@@ -41,7 +42,7 @@ function sawed(marker){
 
 function chainsawDelay() {
 	if(!chainsawAvailable) {
-		setTimeout(function(){
+		myChainsaw = setTimeout(function(){
 			chainsawAvailable = true;
 			$('#chainsaw').addClass('bomb-available');
 			$('#chainsaw').toggleClass('chainsawMove');

@@ -3,6 +3,7 @@ var mineAvailable = false;
 // bombSelected  is set to true on a click event, and will unlock the bomb weapon
 var mineSelected = false;
 var theMine;
+var myMine;
 
 
 $('#mine').on('click', function() {
@@ -44,7 +45,7 @@ function onMapClickMines(e) {
 // if weapon is not available, set timer for it to become available again.
 function mineDelay() {
 	if (!mineAvailable) {
-		setTimeout(function(){
+		myMine = setTimeout(function(){
 			mineAvailable = true;
 			$('#mine').addClass('mine_btn');
 			$('#mine').addClass('bomb-available');
