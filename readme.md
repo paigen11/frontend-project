@@ -41,12 +41,17 @@ This project was not without its stumbling blocks from the beginning. We solved 
 
     The problem was how to allow the user to select from these different weapons (and also start a new game, see their kill score, etc.). The answer came in the form of a floating menu bar. The buttons on the bar allowed users to select the bomb option (which was set to a timer so it was only available after a certain amount of time passed) or the chainsaw option (with the same sort of timer system), it also had a start button and a kill score counter featuring just how many zombies had already been eliminated.
 
-    * Challenge #4: Making the zombies move
+  * Challenge #4: Making the zombies move
     A zombie outbreak game is a great idea, but it's not nearly as much fun if the zombies don't converge and kill any remaining survivors. We were bound and determined to get the zombies randomly generating on our map to move, and so we set the centerpoint of the map as the location we wanted them all to move towards. That way, players would have to defend the castle there, or be overrun and the game would be over. 
 
     This decision to make them mobile proved harder than we anticipated. The first approach we tried to get the zombies to move involved higher level math the likes of which hadn't been seen since our days of AP Calculus in high school. The first step involved making sure the zombies spawned outside of a certain radius of the center of the map (to give the player a fighting chance). So a circular radius from the centerpoint was determined and if the random point for a zombie was defined inside of that radius the calculation picking a point would run again until it was outside the circle. Ok. So far, so good.
 
     Then we needed the zombies to move back towards the center regardless of where they'd been dropped around it. Our first few tries involved segmenting the map into four quadrants, determining the distance from the center by a zombie's latitudinal and longitudinal coordinants and then updating their coordinates at a set interval to inch them closer to the goal. We got the zombies moving, but getting them to move in the correct direction wasn't working. After many hours spent writing math heavy code invoking sine, cosine, etas, thetas and triangular hypotenuses (and still not getting the desired result), we checked out Leaflet's extensive list of plugins. And lo and behold, the Leaflet.MovingMarker plugin turned out to be our saving grace. With a new file, a few more lines of code and a set centerpoint all the zombies could move towards regardless of their starting position. It was a game changer because we were willing to abandon the hours of work we'd already put in in favor of a premade solution adapted to us.
+
+  * Challenge #5: Having the building explode when it was overrun
+    We wanted a very visual way to show the game had ended, and since the city center was being overrun, what better way than with an explosion of the city hall? However, because of where we were working there was no easy way to have a GIF or other animation happen. But that wouldn't stop us. 
+
+    We got creative and made a function where all the individual images of each element of the explosion animation were taken, and then set them all to separate timeout functions each one tenth of a second after the other one before them. And voila! City hall implodes in a fiery explosion.
 
 ##MVP (Minimum Viable Product)
 ---
@@ -176,3 +181,30 @@ JavaScript to change the cursor to a chainsaw and hover over zombies to kill the
     } 
   } 
 ``` 
+
+Sample of JavaScript to make the explosion animation
+```javascript 
+function explosion(){
+  setTimeout(function(){
+    castle = L.icon({iconUrl: 'img2/explosion_1.png', iconSize: [96, 96]});
+    home.setIcon(castle)
+    home.setZIndexOffset(1000);
+  }, 100);
+  setTimeout(function(){
+    castle = L.icon({iconUrl: 'img2/explosion_2.png', iconSize: [96, 96]});
+    home.setIcon(castle)
+  }, 200);
+  setTimeout(function(){
+    castle = L.icon({iconUrl: 'img2/explosion_3.png', iconSize: [96, 96]});
+    home.setIcon(castle)
+  }, 300);
+  setTimeout(function(){
+    castle = L.icon({iconUrl: 'img2/explosion_4.png', iconSize: [96, 96]});
+    home.setIcon(castle)
+  }, 400);
+  setTimeout(function(){
+    castle = L.icon({iconUrl: 'img2/explosion_5.png', iconSize: [96, 96]});
+    home.setIcon(castle)
+  }, 500);
+}
+```
