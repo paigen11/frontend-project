@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset='utf-8' />
-    <title></title>
+    <title>Zombiez: The Game</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
     <link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
@@ -18,9 +18,9 @@
 <body>
 
 <!-- <div id="header-wrapper">
-    <div id="header">
-        <h1>Zombie Outbreak</h1>
-    </div>
+    <div id="header"> -->
+        <!-- <h1>Zombiez: The Game</h1> -->
+  <!--   </div>
     <div id="subheader">
         <h2>Zombies are attacking Atlanta! Click directly on them to kill the brain eaters or drop a bomb to kill multiple undead. But beware... after a certain time the hoards of the walking dead will overwhelm you and the city will be lost. Can you survive?</h2>
     </div>
@@ -28,7 +28,9 @@
 
 <div id='map'></div>
 
-<div id="stop" onclick="stop()"></div>
+
+
+<div id="stop">Zombiez: The Game</div>
 
 <div class="danger-wrapper" onclick="test()">
   <div id="danger_meter">0</div>
@@ -36,6 +38,10 @@
 
 <div id="message">
     <p class="message-text"></p>
+</div>
+
+<div id="end-message">
+    <p class="end-message-text"></p>
 </div>
 
 <div class="menu_goodies">
@@ -49,7 +55,7 @@
     <a href="#" class="link_two link_general" id="chainsaw"><div class='inside_content'><img src="img/chainsaw-icon.png"></div></a>
     <a href="#" class="link_two link_general" id="bomb"><div class='inside_content'><img src="img/airstrike.png"></div></a>
     <a href="#" class="link_two link_general" onclick='attackOptions()'><div class='inside_content glyph_size''><img src="img/attack.png"></div></a>
-    <a href="#" class="link_three link_general"><div class='inside_content'><img src="img/glyphicons-195-question-sign.png"></div></a>
+    <a href="#" class="link_three link_general" id="help" onclick="controlsClose()"><div class='inside_content'><img src="img/glyphicons-195-question-sign.png"></div></a>
     <a href="#" class="link_four link_general"><div class='inside_content' onclick="showScore()"><img src="img/glyphicons-329-podium.png"></div></a>
     <div id="scoreboard" onclick="showScore()">0</div>
   </input>
@@ -58,12 +64,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script type="text/javascript" src="scripts/Leaflet.MovingMarker/MovingMarker.js"></script>
 <script type="text/javascript" src='scripts/functions/menu.js'></script>
+<script type="text/javascript" src='scripts/functions/reset.js'></script>
 <script type="text/javascript" src='scripts/functions/generator.js'></script>
 <script type="text/javascript" src='scripts/functions/message.js'></script>
 <script type="text/javascript" src='scripts/functions/bomb.js'></script>
 <script type="text/javascript" src='scripts/functions/center_check.js'></script>
 <script type="text/javascript" src='scripts/functions/chainsaw.js'></script>
 <script type="text/javascript" src='scripts/functions/mines.js'></script>
+<script type="text/javascript" src='scripts/functions/shortcuts.js'></script>
 <script type="text/javascript" src="scripts/scripts.js"></script>
 
 </body>

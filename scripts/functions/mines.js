@@ -3,6 +3,7 @@ var mineAvailable = false;
 // bombSelected  is set to true on a click event, and will unlock the bomb weapon
 var mineSelected = false;
 var theMine;
+var myMine;
 
 
 $('#mine').on('click', function() {
@@ -25,6 +26,9 @@ function MineAreaCheck() {
 				trappedZombies.push(markerList[i]);
 				mineAreaEffect(theMine);
 				minePlaced = false;
+				mineDelay();
+				clearInterval(mineWatch);
+				clearInterval(mineListen);
 				console.log('zombie inside!');
 			}
 		}
@@ -33,7 +37,9 @@ function MineAreaCheck() {
 
 function onMapClickMines(e) {
     if (mineSelected) {
-	    theMine = L.circle(e.latlng, 3000, {color: 'red'}).addTo(map);
+	    theMine = L.circle(e.latlng, 3000, {color: 'red'}).setStyle({className: "pulseCustom"}).addTo(map);
+	    mineSprite = L.marker(e.latlng, {icon: mineIcon}).addTo(map);
+	    mineListen = setInterval(amIPlaced, 1000);
 	    minePlaced = true;
     	mineAvailable = false;
     	mineSelected = false;
@@ -44,13 +50,13 @@ function onMapClickMines(e) {
 // if weapon is not available, set timer for it to become available again.
 function mineDelay() {
 	if (!mineAvailable) {
-		setTimeout(function(){
+		myMine = setTimeout(function(){
 			mineAvailable = true;
 			$('#mine').addClass('mine_btn');
 			$('#mine').addClass('bomb-available');
 			$('#mine').toggleClass('mineMove');
-			 newMessage("Place a mine as a trap for zombies!"); 
-		}, 15000);
+			 newMessage("Blow those zombies away with a land mine trap!"); 
+		}, 10000);
 		
 	}
 }
@@ -59,7 +65,7 @@ function mineDelay() {
 // of the weapon's effect, remove markers from array and map, and update score.
 function mineAreaEffect(circle) {
 	var killedMarkers = [];
-	theMine.setRadius(8000);
+	theMine.setRadius(8000).setStyle({className: "pulseCustom2"});
 	for(i = 0; i < markerList.length; i++) {
 		if (getDistanceFromLatLonInKm(markerList[i]._latlng.lat, markerList[i]._latlng.lng, theMine._latlng.lat, theMine._latlng.lng) < 8){
 			markerList[i].setIcon(corpseIcon);
@@ -69,17 +75,19 @@ function mineAreaEffect(circle) {
 				for(j = 0; j < killedMarkers.length; j++) {
 					map.removeLayer(killedMarkers[j])
 				}
-			},1000)
+			},500)
 			
 			markerList.splice(i, 1);
 			scoreboard.innerHTML++;
 		}
 	}
-	mineDelay();
 	setTimeout(function() {
 		// remove weapon polygon from map when animation is done
-		map.removeLayer(circle)
-	}, 500)
+		map.removeLayer(theMine);
+		map.removeLayer(mineSprite);
+
+	}, 1000)
+
 }
 function amIPlaced(){
 	if(minePlaced == true){

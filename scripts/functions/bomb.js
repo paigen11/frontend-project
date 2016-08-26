@@ -3,6 +3,7 @@
 var bombAvailable = false;
 // bombSelected  is set to true on a click event, and will unlock the bomb weapon
 var bombSelected = false;
+var myBomb;
 
 // click listener for weapon button
 $('#bomb').on('click', function() {
@@ -30,7 +31,7 @@ function onMapClick(e) {
 // if weapon is not available, set timer for it to become available again.
 function bombDelay() {
 	if (!bombAvailable) {
-		setTimeout(function(){
+		 myBomb = setTimeout(function(){
 			bombAvailable = true;
 			$('#bomb').addClass('bomb_btn');
 			$('#bomb').addClass('bomb-available');

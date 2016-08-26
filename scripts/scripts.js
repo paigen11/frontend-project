@@ -3,9 +3,13 @@
 // create map
 var map = L.map('map', {
     center: [33.73804, -84.38324],
-    zoom: 11,
-    // minZoom: 11,
-    // maxZoom: 11
+    zoom: 12,
+    minZoom: 12,
+    maxZoom: 12,
+    maxBounds: [
+    	[33.567332, -84.639694],
+    	[33.993165, -84.151121]
+    ]
 })
 
 map.doubleClickZoom.disable();
@@ -20,6 +24,8 @@ L.tileLayer('https://api.mapbox.com/styles/v1/paigen11/cis9a8hiy002f2yqnpebp1p32
 var popup = L.popup();  
 var myIcon = L.icon({iconUrl: 'img/zombie_stroke.png', className: 'my-div-icon', iconSize: [25,25]});
 var corpseIcon = L.icon({iconUrl: 'img/zombie_corpse.png', className: 'my-div-icon', iconSize: [25,25]});
+var mineIcon = L.icon({iconUrl: 'img/mine_set.png', className: 'my-div-icon', iconSize: [30,30]});
+
 var markerList = [];
 var generation;
 var centerChecker;

@@ -5,3 +5,10 @@ function newMessage(message) {
 		$('#message').removeClass('slide-in');
 	}, 4000)
 }
+function endMessage(message) {
+	$('.end-message-text').text(message)
+	$('#end-message').addClass('slide-down');
+	setTimeout(function(){
+		$('#end-message').removeClass('slide-down');
+	}, 4000)
+}
