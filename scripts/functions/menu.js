@@ -28,7 +28,7 @@ $('#start').on('click', function(){
     interval = setInterval(generateMarkers, spawnInterval);
     playOptions(); 
     bombDelay();
-    mineDelay();
+    // mineDelay();
     chainsawDelay();
     centerChecker = setInterval(checkCenter, 1000);
     $('#start').toggleClass('bomb-available');
@@ -49,7 +49,7 @@ function showScore(){
 function attackOptions(){
 	$('.bomb_btn').toggleClass('bombMove');
 	$('.chainsaw_btn').toggleClass('chainsawMove');
-	$('.mine_btn').toggleClass('mineMove');
+	// $('.mine_btn').toggleClass('mineMove');
 }
 
 function controlMessage(message) {

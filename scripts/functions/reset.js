@@ -9,8 +9,8 @@ function reset(){
 		markerList = [];
 		dangerZombies = [];
 		scoreboard.innerHTML = 0;
-		$('#mine').removeClass('bomb-available');
-		$('#mine').removeClass('mineMove');
+		// $('#mine').removeClass('bomb-available');
+		// $('#mine').removeClass('mineMove');
 		$('#chainsaw').removeClass('bomb-available');
 		$('#chainsaw').removeClass('chainsawMove');
 		$('#bomb').removeClass('bomb-available');
@@ -19,16 +19,16 @@ function reset(){
 		$('.danger-wrapper').css('width: 50px')
 		$('.danger-wrapper').removeClass('bomb-available');
 		clearTimeout(myChainsaw);
-		clearTimeout(myMine);
+		// clearTimeout(myMine);
 		clearTimeout(myBomb);
 
 		interval = setInterval(generateMarkers, spawnInterval);
 	    playOptions(); 
 	    bombDelay();
-	    mineDelay();
+	    // mineDelay();
 	    chainsawDelay();
 	    centerChecker = setInterval(checkCenter, 1000);
-	    mineListen = setInterval(amIPlaced, 1000);
+	    // mineListen = setInterval(amIPlaced, 1000);
 	})
 	
 }

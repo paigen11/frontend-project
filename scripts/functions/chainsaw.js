@@ -11,7 +11,7 @@ $('#chainsaw').on('click', function() {
 	if(chainsawAvailable){
 		chainsawSelected = true;
 		$('#chainsaw').removeClass('bomb-available');
-		$('#chainsaw').toggleClass('chainsawMove');
+		// $('#chainsaw').toggleClass('chainsawMove');
 		$('body, .leaflet-interactive').addClass('chainsaw-cursor');
 	}
 	
@@ -44,8 +44,9 @@ function chainsawDelay() {
 	if(!chainsawAvailable) {
 		myChainsaw = setTimeout(function(){
 			chainsawAvailable = true;
+			$('#chainsaw').addClass('chainsaw-btn');
 			$('#chainsaw').addClass('bomb-available');
-			$('#chainsaw').toggleClass('chainsawMove');
+			$('#chainsaw').addClass('chainsawMove');
 			newMessage("The chainsaw is ready to mow down some undead! Just hover over them to kill 'em.");
 		}, 30000);
 	}
