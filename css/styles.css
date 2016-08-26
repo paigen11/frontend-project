@@ -35,83 +35,88 @@ body {
   src: url("../../fonts/ZOMBIE.TTF");
 }
 /* line 57, ../compass/sass/styles.scss */
+#danger_meter, #scoreboard {
+  font-family: Zombie, arial;
+}
+
+/* line 61, ../compass/sass/styles.scss */
 .chainsaw-cursor {
   cursor: url("../../fonts/chainsaw.png"), default !important;
 }
 
-/* line 61, ../compass/sass/styles.scss */
+/* line 65, ../compass/sass/styles.scss */
 .bomb-cursor {
   cursor: url("../../fonts/crosshair.png") 32 32, default !important;
 }
 
-/* line 65, ../compass/sass/styles.scss */
+/* line 69, ../compass/sass/styles.scss */
 h1, h2 {
   font-family: Zombie, arial;
   text-align: center;
 }
 
-/* line 70, ../compass/sass/styles.scss */
+/* line 74, ../compass/sass/styles.scss */
 .leaflet-marker-icon {
   height: 20px;
   transition: all 1s linear;
 }
 
-/* line 75, ../compass/sass/styles.scss */
+/* line 79, ../compass/sass/styles.scss */
 .menu_goodies {
   z-index: 801;
   position: relative;
 }
 
-/* line 79, ../compass/sass/styles.scss */
+/* line 83, ../compass/sass/styles.scss */
 .menu_opener {
   display: none;
 }
 
-/* line 82, ../compass/sass/styles.scss */
+/* line 86, ../compass/sass/styles.scss */
 .menu_opener:checked ~ .link_one {
   top: 150px;
 }
 
-/* line 85, ../compass/sass/styles.scss */
+/* line 89, ../compass/sass/styles.scss */
 .menu_opener:checked ~ #scoreboard {
   left: 150px;
 }
 
-/* line 88, ../compass/sass/styles.scss */
+/* line 92, ../compass/sass/styles.scss */
 .menu_opener:checked ~ .link_two {
   left: 345px;
 }
 
-/* line 91, ../compass/sass/styles.scss */
+/* line 95, ../compass/sass/styles.scss */
 .menu_opener:checked ~ .link_three {
   top: 345px;
 }
 
-/* line 94, ../compass/sass/styles.scss */
+/* line 98, ../compass/sass/styles.scss */
 .menu_opener:checked ~ .link_four {
   left: 150px;
 }
 
-/* line 97, ../compass/sass/styles.scss */
+/* line 101, ../compass/sass/styles.scss */
 .menu_opener:checked ~ .barre_hamburger {
   opacity: 0;
 }
 
-/* line 100, ../compass/sass/styles.scss */
+/* line 104, ../compass/sass/styles.scss */
 .menu_opener:checked ~ .menu_opener_label:after {
   transform: rotate(45deg);
   top: 33px;
   left: 13px;
 }
 
-/* line 105, ../compass/sass/styles.scss */
+/* line 109, ../compass/sass/styles.scss */
 .menu_opener:checked ~ .menu_opener_label:before {
   transform: rotate(-45deg);
   top: 33px;
   left: 13px;
 }
 
-/* line 110, ../compass/sass/styles.scss */
+/* line 114, ../compass/sass/styles.scss */
 .menu_opener:checked ~ .menu_opener_label {
   width: 75px;
   height: 75px;
@@ -119,7 +124,7 @@ h1, h2 {
   left: 235.5px;
 }
 
-/* line 116, ../compass/sass/styles.scss */
+/* line 120, ../compass/sass/styles.scss */
 .menu_opener_label {
   background: #FFA240;
   width: 100px;
@@ -134,7 +139,7 @@ h1, h2 {
   transition: all .4s ease;
 }
 
-/* line 129, ../compass/sass/styles.scss */
+/* line 133, ../compass/sass/styles.scss */
 .menu_opener_label:after {
   position: absolute;
   top: 30px;
@@ -147,7 +152,7 @@ h1, h2 {
   transition: all 0.4s ease;
 }
 
-/* line 140, ../compass/sass/styles.scss */
+/* line 144, ../compass/sass/styles.scss */
 .menu_opener_label:before {
   position: absolute;
   top: 60px;
@@ -160,7 +165,7 @@ h1, h2 {
   transition: all 0.4s ease;
 }
 
-/* line 151, ../compass/sass/styles.scss */
+/* line 155, ../compass/sass/styles.scss */
 .barre_hamburger {
   width: 50px;
   height: 10px;
@@ -173,7 +178,7 @@ h1, h2 {
   transition: all 0.4s ease;
 }
 
-/* line 163, ../compass/sass/styles.scss */
+/* line 167, ../compass/sass/styles.scss */
 .link_general, .link_one, .link_two, .link_three, .link_four {
   width: 50px;
   height: 50px;
@@ -187,27 +192,27 @@ h1, h2 {
   transition: all 0.4s ease;
 }
 
-/* line 187, ../compass/sass/styles.scss */
+/* line 191, ../compass/sass/styles.scss */
 div.inside_content {
   text-align: center;
   margin: auto;
   line-height: 50px;
 }
 
-/* line 193, ../compass/sass/styles.scss */
+/* line 197, ../compass/sass/styles.scss */
 a {
   text-decoration: none;
   color: #000;
   font-family: Arial;
 }
 
-/* line 199, ../compass/sass/styles.scss */
+/* line 203, ../compass/sass/styles.scss */
 .inside_content img {
   margin-top: 13px;
   margin-right: 1px;
 }
 
-/* line 205, ../compass/sass/styles.scss */
+/* line 209, ../compass/sass/styles.scss */
 .bomb-available {
   animation: flash 0.5s infinite;
 }
@@ -223,7 +228,7 @@ a {
     background-color: #FFA240;
   }
 }
-/* line 215, ../compass/sass/styles.scss */
+/* line 219, ../compass/sass/styles.scss */
 #scoreboard {
   height: 20px;
   width: 50px;
@@ -239,14 +244,14 @@ a {
   transition: all .4s ease;
 }
 
-/* line 229, ../compass/sass/styles.scss */
+/* line 233, ../compass/sass/styles.scss */
 .showMe {
   top: 315px !important;
   opacity: 1 !important;
   transition: all 1s linear;
 }
 
-/* line 235, ../compass/sass/styles.scss */
+/* line 239, ../compass/sass/styles.scss */
 .pulseCustom {
   animation: pulse 1s ease-out;
   transform-origin: 50% 50% !important;
@@ -263,22 +268,22 @@ a {
     transform: scale(0.1);
   }
 }
-/* line 246, ../compass/sass/styles.scss */
+/* line 250, ../compass/sass/styles.scss */
 #power {
   z-index: 10;
 }
 
-/* line 250, ../compass/sass/styles.scss */
+/* line 254, ../compass/sass/styles.scss */
 .restartMove {
   left: 185px !important;
 }
 
-/* line 254, ../compass/sass/styles.scss */
+/* line 258, ../compass/sass/styles.scss */
 .startMove {
   left: 315px;
 }
 
-/* line 258, ../compass/sass/styles.scss */
+/* line 262, ../compass/sass/styles.scss */
 #message {
   position: absolute;
   top: 400px;
@@ -291,19 +296,19 @@ a {
   border-radius: 5px;
 }
 
-/* line 270, ../compass/sass/styles.scss */
+/* line 274, ../compass/sass/styles.scss */
 .message-text {
   font-family: Zombie, arial;
   text-align: center;
 }
 
-/* line 275, ../compass/sass/styles.scss */
+/* line 279, ../compass/sass/styles.scss */
 .slide-in {
   transform: translateX(135%);
   -webkit-animation-fill-mode: forwards;
 }
 
-/* line 280, ../compass/sass/styles.scss */
+/* line 284, ../compass/sass/styles.scss */
 .danger-wrapper {
   height: 50px;
   width: 50px;
@@ -318,25 +323,25 @@ a {
   transition: all .5s ease;
 }
 
-/* line 295, ../compass/sass/styles.scss */
+/* line 299, ../compass/sass/styles.scss */
 .glyph_size img {
   height: 26px;
   width: auto;
   z-index: 11;
 }
 
-/* line 302, ../compass/sass/styles.scss */
+/* line 306, ../compass/sass/styles.scss */
 .bombMove {
   top: 315px;
 }
 
-/* line 306, ../compass/sass/styles.scss */
+/* line 310, ../compass/sass/styles.scss */
 .chainsawMove {
   left: 410px !important;
   top: 315px;
 }
 
-/* line 311, ../compass/sass/styles.scss */
+/* line 315, ../compass/sass/styles.scss */
 .mineMove {
   left: 410px !important;
 }
