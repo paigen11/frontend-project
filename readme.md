@@ -103,8 +103,8 @@ Weapons flash when they're ready to use
 As zombies head for the center, the danger counter climbs in the left hand side 
 ![alt text](https://github.com/paigen11/frontend-project/blob/master/screenshots/zombies-converge.png 'zombies-converge.png') 
  
-Game over screen when the user's been overrun by zombies 
-![alt text](https://github.com/paigen11/frontend-project/blob/master/screenshots/game-over.png 'game-over.png') 
+Game over screen and building explosion when the user's been overrun by zombies 
+![alt text](https://github.com/paigen11/frontend-project/blob/master/screenshots/building-explosion.png 'buiding-explosion.png') 
  
 ##Code Examples 
 --- 
