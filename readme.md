@@ -48,6 +48,11 @@ This project was not without its stumbling blocks from the beginning. We solved 
 
     Then we needed the zombies to move back towards the center regardless of where they'd been dropped around it. Our first few tries involved segmenting the map into four quadrants, determining the distance from the center by a zombie's latitudinal and longitudinal coordinants and then updating their coordinates at a set interval to inch them closer to the goal. We got the zombies moving, but getting them to move in the correct direction wasn't working. After many hours spent writing math heavy code invoking sine, cosine, etas, thetas and triangular hypotenuses (and still not getting the desired result), we checked out Leaflet's extensive list of plugins. And lo and behold, the Leaflet.MovingMarker plugin turned out to be our saving grace. With a new file, a few more lines of code and a set centerpoint all the zombies could move towards regardless of their starting position. It was a game changer because we were willing to abandon the hours of work we'd already put in in favor of a premade solution adapted to us.
 
+  * Challenge #5: Having the building explode when it was overrun
+    We wanted a very visual way to show the game had ended, and since the city center was being overrun, what better way than with an explosion of the city hall? However, because of where we were working there was no easy way to have a GIF or other animation happen. But that wouldn't stop us. 
+
+    We got creative and made a function where all the individual images of each element of the explosion animation were taken, and then set them all to separate timeout functions each one tenth of a second after the other one before them. And voila! City hall implodes in a fiery explosion.
+
 ##MVP (Minimum Viable Product)
 ---
 The MVP for this project was achieved relatively quickly once we got a general idea of the power and scope of the Leaflet API, which is quite extensive. 
@@ -176,3 +181,30 @@ JavaScript to change the cursor to a chainsaw and hover over zombies to kill the
     } 
   } 
 ``` 
+
+Sample of JavaScript to make the explosion animation
+```javascript 
+function explosion(){
+  setTimeout(function(){
+    castle = L.icon({iconUrl: 'img2/explosion_1.png', iconSize: [96, 96]});
+    home.setIcon(castle)
+    home.setZIndexOffset(1000);
+  }, 100);
+  setTimeout(function(){
+    castle = L.icon({iconUrl: 'img2/explosion_2.png', iconSize: [96, 96]});
+    home.setIcon(castle)
+  }, 200);
+  setTimeout(function(){
+    castle = L.icon({iconUrl: 'img2/explosion_3.png', iconSize: [96, 96]});
+    home.setIcon(castle)
+  }, 300);
+  setTimeout(function(){
+    castle = L.icon({iconUrl: 'img2/explosion_4.png', iconSize: [96, 96]});
+    home.setIcon(castle)
+  }, 400);
+  setTimeout(function(){
+    castle = L.icon({iconUrl: 'img2/explosion_5.png', iconSize: [96, 96]});
+    home.setIcon(castle)
+  }, 500);
+}
+```
