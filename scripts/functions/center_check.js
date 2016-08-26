@@ -26,7 +26,7 @@ function checkCenter() {
 			clearInterval(interval);
 			clearInterval(centerChecker);
 			explosion();
-			endMessage('Game Over! Click Reset');
+			endMessage('Game Over! Refresh Page.');
 			playOptions();
 			$('#reset').addClass('bomb-available');
 			// $('#mine').removeClass('bomb-available');
