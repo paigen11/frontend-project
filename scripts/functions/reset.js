@@ -15,12 +15,20 @@ function reset(){
 		$('#chainsaw').removeClass('chainsawMove');
 		$('#bomb').removeClass('bomb-available');
 		$('#bomb').removeClass('bombMove');
-		// $('#start').removeClass('bomb-available');
+		$('#start').removeClass('bomb-available');
 		$('.danger-wrapper').css('width: 50px')
 		$('.danger-wrapper').removeClass('bomb-available');
 		clearTimeout(myChainsaw);
 		clearTimeout(myMine);
 		clearTimeout(myBomb);
+
+		interval = setInterval(generateMarkers, spawnInterval);
+	    playOptions(); 
+	    bombDelay();
+	    mineDelay();
+	    chainsawDelay();
+	    centerChecker = setInterval(checkCenter, 1000);
+	    mineListen = setInterval(amIPlaced, 1000);
 	})
 	
 }

@@ -54,6 +54,10 @@
     src: url('../../fonts/ZOMBIE.TTF');
 }
 
+#danger_meter, #scoreboard{
+  font-family: Zombie, arial;
+}
+
 .chainsaw-cursor {
   cursor: url('../../fonts/chainsaw.png'), default !important;
 }
