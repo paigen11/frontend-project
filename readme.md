@@ -89,9 +89,90 @@ It's safe to say the plans for this game got bigger and grander as the week prog
 
 ##Screenshots
 ---
-TBD
-![alt text]()
+Start game screen where rules are laid out for players and start button tempts them to play 
+![alt text](https://github.com/paigen11/frontend-project/blob/master/screenshots/start-image.png 'start-image.png') 
+ 
+Weapons flash when they're ready to use 
+![alt text](https://github.com/paigen11/frontend-project/blob/master/screenshots/weapons.png 'weapons.png') 
+ 
+As zombies head for the center, the danger counter climbs in the left hand side 
+![alt text](https://github.com/paigen11/frontend-project/blob/master/screenshots/zombies-converge.png 'zombies-converge.png') 
+ 
+Game over screen when the user's been overrun by zombies 
+![alt text](https://github.com/paigen11/frontend-project/blob/master/screenshots/game-over.png 'game-over.png') 
+ 
+##Code Examples 
+--- 
+jQuery and JavaScript controlling the menu bar 
+```javascript
+  $('#start').on('click', function(){ 
+      // generation = setInterval(generateMarkers, 500); 
+      interval = setInterval(generateMarkers, spawnInterval);
+      playOptions(); 
+      bombDelay();
+      mineDelay();
+      chainsawDelay();
+      centerChecker = setInterval(checkCenter, 1000);
+      mineListen = setInterval(amIPlaced, 1000);
+      $('#start').toggleClass('bomb-available');
+  }) 
+ ``` 
 
-##Code Examples
----
-TBD
+JavaScript to check if zombies are close to city center 
+```javascript 
+  function checkCenter() { 
+    dangerZombies = []; 
+    // console.log(dangerZombies); 
+    var widthValue = 50; 
+    if(dangerZombies.length < 10){ 
+      for(i = 0; i < markerList.length; i++) { 
+        if (getDistanceFromLatLonInKm(markerList[i]._latlng.lat, markerList[i]._latlng.lng, point[0], point[1]) < 12){ 
+          dangerZombies.push(markerList[i]); 
+          howManyZombiesInside.innerHTML = dangerZombies.length; 
+        } 
+      } 
+    } 
+    if(dangerZombies.length > 0 && dangerZombies.length < 10){ 
+      widthValue = widthValue * dangerZombies.length; 
+      widthValue += 'px'; 
+      $('.danger-wrapper').css({'width':widthValue}) 
+    } 
+    if(dangerZombies.length > 5 && dangerZombies.length < 10){ 
+      $('.danger-wrapper').toggleClass('bomb-available'); 
+    } 
+    if(dangerZombies.length >= 10){ 
+      howManyZombiesInside.innerHTML = "Game over man! Game over!"; 
+      function stop(){ 
+        clearInterval(interval); 
+        clearInterval(centerChecker); 
+      }; 
+      stop(); 
+      widthValue = '300px'; 
+      $('.danger-wrapper').css({'width':widthValue}); 
+    } 
+  } 
+``` 
+ 
+JavaScript to change the cursor to a chainsaw and hover over zombies to kill them 
+```javascript 
+  function sawed(marker){ 
+    if(chainsawSelected){ 
+      marker.setIcon(corpseIcon); 
+      setTimeout(function(){ 
+        map.removeLayer(marker); 
+      }, 1000) 
+       
+      scoreboard.innerHTML++; 
+        var index = markerList.indexOf(marker); 
+              if(index > -1){ 
+                  markerList.splice(index, 1); 
+              } 
+      setTimeout(function(){ 
+        chainsawAvailable = false; 
+        chainsawSelected = false; 
+        $('body, .leaflet-interactive').removeClass('chainsaw-cursor'); 
+        chainsawDelay(); 
+      }, 5000) 
+    } 
+  } 
+``` 
