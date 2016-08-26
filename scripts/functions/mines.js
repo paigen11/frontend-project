@@ -37,6 +37,8 @@ function MineAreaCheck() {
 function onMapClickMines(e) {
     if (mineSelected) {
 	    theMine = L.circle(e.latlng, 3000, {color: 'red'}).setStyle({className: "pulseCustom"}).addTo(map);
+	    mineSprite = L.marker(e.latlng, {icon: mineIcon}).addTo(map);
+
 	    minePlaced = true;
     	mineAvailable = false;
     	mineSelected = false;
@@ -80,7 +82,9 @@ function mineAreaEffect(circle) {
 	}
 	setTimeout(function() {
 		// remove weapon polygon from map when animation is done
-		map.removeLayer(theMine)
+		map.removeLayer(theMine);
+		map.removeLayer(mineSprite);
+
 	}, 1000)
 
 }

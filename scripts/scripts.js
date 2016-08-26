@@ -24,6 +24,8 @@ L.tileLayer('https://api.mapbox.com/styles/v1/paigen11/cis9a8hiy002f2yqnpebp1p32
 var popup = L.popup();  
 var myIcon = L.icon({iconUrl: 'img/zombie_stroke.png', className: 'my-div-icon', iconSize: [25,25]});
 var corpseIcon = L.icon({iconUrl: 'img/zombie_corpse.png', className: 'my-div-icon', iconSize: [25,25]});
+var mineIcon = L.icon({iconUrl: 'img/mine_set.png', className: 'my-div-icon', iconSize: [30,30]});
+
 var markerList = [];
 var generation;
 var centerChecker;
