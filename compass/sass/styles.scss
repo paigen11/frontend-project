@@ -237,8 +237,13 @@ a {
 }
 
 .pulseCustom {
-	animation: pulse 1s ease-out;
+	animation: pulse 1s ease-out infinite;
 	transform-origin: 50% 50% !important;
+}
+
+.pulseCustom2 {
+  animation: pulse 1s ease-out;
+  transform-origin: 50% 50% !important;
 }
 
 @keyframes pulse {

@@ -26,6 +26,8 @@ function MineAreaCheck() {
 				trappedZombies.push(markerList[i]);
 				mineAreaEffect(theMine);
 				minePlaced = false;
+				mineDelay();
+				clearInterval(mineWatch);
 				console.log('zombie inside!');
 			}
 		}
@@ -34,7 +36,7 @@ function MineAreaCheck() {
 
 function onMapClickMines(e) {
     if (mineSelected) {
-	    theMine = L.circle(e.latlng, 3000, {color: 'red'}).addTo(map);
+	    theMine = L.circle(e.latlng, 3000, {color: 'red'}).setStyle({className: "pulseCustom"}).addTo(map);
 	    minePlaced = true;
     	mineAvailable = false;
     	mineSelected = false;
@@ -60,7 +62,7 @@ function mineDelay() {
 // of the weapon's effect, remove markers from array and map, and update score.
 function mineAreaEffect(circle) {
 	var killedMarkers = [];
-	theMine.setRadius(8000).setStyle({className: "pulseCustom"});
+	theMine.setRadius(8000).setStyle({className: "pulseCustom2"});
 	for(i = 0; i < markerList.length; i++) {
 		if (getDistanceFromLatLonInKm(markerList[i]._latlng.lat, markerList[i]._latlng.lng, theMine._latlng.lat, theMine._latlng.lng) < 8){
 			markerList[i].setIcon(corpseIcon);
@@ -76,12 +78,11 @@ function mineAreaEffect(circle) {
 			scoreboard.innerHTML++;
 		}
 	}
-	mineDelay();
-	clearInterval(mineWatch);
 	setTimeout(function() {
 		// remove weapon polygon from map when animation is done
-		map.removeLayer(circle)
-	}, 500)
+		map.removeLayer(theMine)
+	}, 1000)
+
 }
 function amIPlaced(){
 	if(minePlaced == true){

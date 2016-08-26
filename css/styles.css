@@ -253,6 +253,12 @@ a {
 
 /* line 239, ../compass/sass/styles.scss */
 .pulseCustom {
+  animation: pulse 1s ease-out infinite;
+  transform-origin: 50% 50% !important;
+}
+
+/* line 244, ../compass/sass/styles.scss */
+.pulseCustom2 {
   animation: pulse 1s ease-out;
   transform-origin: 50% 50% !important;
 }
@@ -268,22 +274,22 @@ a {
     transform: scale(0.1);
   }
 }
-/* line 250, ../compass/sass/styles.scss */
+/* line 255, ../compass/sass/styles.scss */
 #power {
   z-index: 10;
 }
 
-/* line 254, ../compass/sass/styles.scss */
+/* line 259, ../compass/sass/styles.scss */
 .restartMove {
   left: 185px !important;
 }
 
-/* line 258, ../compass/sass/styles.scss */
+/* line 263, ../compass/sass/styles.scss */
 .startMove {
   left: 315px;
 }
 
-/* line 262, ../compass/sass/styles.scss */
+/* line 267, ../compass/sass/styles.scss */
 #message {
   position: absolute;
   top: 400px;
@@ -296,19 +302,19 @@ a {
   border-radius: 5px;
 }
 
-/* line 274, ../compass/sass/styles.scss */
+/* line 279, ../compass/sass/styles.scss */
 .message-text {
   font-family: Zombie, arial;
   text-align: center;
 }
 
-/* line 279, ../compass/sass/styles.scss */
+/* line 284, ../compass/sass/styles.scss */
 .slide-in {
   transform: translateX(135%);
   -webkit-animation-fill-mode: forwards;
 }
 
-/* line 284, ../compass/sass/styles.scss */
+/* line 289, ../compass/sass/styles.scss */
 .danger-wrapper {
   height: 50px;
   width: 50px;
@@ -323,25 +329,25 @@ a {
   transition: all .5s ease;
 }
 
-/* line 299, ../compass/sass/styles.scss */
+/* line 304, ../compass/sass/styles.scss */
 .glyph_size img {
   height: 26px;
   width: auto;
   z-index: 11;
 }
 
-/* line 306, ../compass/sass/styles.scss */
+/* line 311, ../compass/sass/styles.scss */
 .bombMove {
   top: 315px;
 }
 
-/* line 310, ../compass/sass/styles.scss */
+/* line 315, ../compass/sass/styles.scss */
 .chainsawMove {
   left: 410px !important;
   top: 315px;
 }
 
-/* line 315, ../compass/sass/styles.scss */
+/* line 320, ../compass/sass/styles.scss */
 .mineMove {
   left: 410px !important;
 }
