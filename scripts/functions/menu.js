@@ -13,7 +13,7 @@ setTimeout(function(){
 	$('#help').toggleClass('bomb-available');
 	showScore();
 	controls();
-	endMessage('Use these hotkeys in game! [1] Bomb [2] Chainsaw');
+	endMessage('Use these hotkeys in game! [1] Bomb [3] Chainsaw');
 },2000);
 
 function menuToggle(){ 
