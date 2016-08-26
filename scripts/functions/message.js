@@ -9,6 +9,6 @@ function endMessage(message) {
 	$('.end-message-text').text(message)
 	$('#end-message').addClass('slide-down');
 	setTimeout(function(){
-		$('#message').removeClass('slide-down');
+		$('#end-message').removeClass('slide-down');
 	}, 4000)
 }

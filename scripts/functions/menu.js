@@ -13,7 +13,7 @@ setTimeout(function(){
 	$('#help').toggleClass('bomb-available');
 	showScore();
 	controls();
-	// endMessage('Use these hotkeys in game! [1] Bomb [2] Mines [3] Chainsaw');
+	endMessage('Use these hotkeys in game! [1] Bomb [2] Mines [3] Chainsaw');
 },2000);
 
 function menuToggle(){ 
@@ -31,7 +31,6 @@ $('#start').on('click', function(){
     mineDelay();
     chainsawDelay();
     centerChecker = setInterval(checkCenter, 1000);
-    mineListen = setInterval(amIPlaced, 1000);
     $('#start').toggleClass('bomb-available');
 }) 
 function showScore(){ 

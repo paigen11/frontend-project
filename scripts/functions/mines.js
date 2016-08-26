@@ -28,6 +28,7 @@ function MineAreaCheck() {
 				minePlaced = false;
 				mineDelay();
 				clearInterval(mineWatch);
+				clearInterval(mineListen);
 				console.log('zombie inside!');
 			}
 		}
@@ -38,7 +39,7 @@ function onMapClickMines(e) {
     if (mineSelected) {
 	    theMine = L.circle(e.latlng, 3000, {color: 'red'}).setStyle({className: "pulseCustom"}).addTo(map);
 	    mineSprite = L.marker(e.latlng, {icon: mineIcon}).addTo(map);
-
+	    mineListen = setInterval(amIPlaced, 1000);
 	    minePlaced = true;
     	mineAvailable = false;
     	mineSelected = false;
