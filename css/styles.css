@@ -41,12 +41,12 @@ body {
 
 /* line 65, ../compass/sass/styles.scss */
 .chainsaw-cursor {
-  cursor: url("../../frontend-project/fonts/chainsaw.png"), default !important;
+  cursor: url("../fonts/chainsaw.png"), default !important;
 }
 
 /* line 69, ../compass/sass/styles.scss */
 .bomb-cursor {
-  cursor: url("../../frontend-project/fonts/crosshair.png") 32 32, default !important;
+  cursor: url("../fonts/crosshair.png") 32 32, default !important;
 }
 
 /* line 73, ../compass/sass/styles.scss */
