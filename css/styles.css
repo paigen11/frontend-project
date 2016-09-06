@@ -32,7 +32,7 @@ body {
 
 @font-face {
   font-family: Zombie;
-  src: url("../../fonts/ZOMBIE.TTF");
+  src: url("../../frontend-project/fonts/ZOMBIE.TTF");
 }
 /* line 61, ../compass/sass/styles.scss */
 #danger_meter, #message, #end-message, #scoreboard {
@@ -41,12 +41,12 @@ body {
 
 /* line 65, ../compass/sass/styles.scss */
 .chainsaw-cursor {
-  cursor: url("../../fonts/chainsaw.png"), default !important;
+  cursor: url("../../frontend-project/fonts/chainsaw.png"), default !important;
 }
 
 /* line 69, ../compass/sass/styles.scss */
 .bomb-cursor {
-  cursor: url("../../fonts/crosshair.png") 32 32, default !important;
+  cursor: url("../../frontend-project/fonts/crosshair.png") 32 32, default !important;
 }
 
 /* line 73, ../compass/sass/styles.scss */
