@@ -1,8 +1,9 @@
-#Zombie Outbreak
+Zombie Outbreak
+---
 
-##[Live Demo](http://www.jt-townsend.com/zombiez)
+[Live Demo](http://www.jt-townsend.com/zombiez)
 
-##Contents
+Contents
 ---
   * What It Is
   * What We Used
@@ -14,11 +15,11 @@
   * Github Link
   * Code Examples
 
-##What It Is
+What It Is
 ---
 This is a collaborative project where we made a game utilizing the front-end knowledge gained so far. We made an interactive game where the user has to prevent the growing zombie horde from getting to the center of the city by whatever means necessary. As time goes on, the game increases in diffulty with respectively increased perks for getting that far. Survive as long as you can!
 
-##What We Used
+What We Used
 ---
 The following languages and APIs were used:
   * HTML
@@ -28,7 +29,7 @@ The following languages and APIs were used:
   * Leaflet
   * Math (lots and lots of math)
 
-##Challenges and Solutions
+Challenges and Solutions
 ---
 This project was not without its stumbling blocks from the beginning. We solved most problems in a timely manner, but at times we had to pivot entirely in order to work within the restrictions of the API.
 
@@ -60,7 +61,7 @@ This project was not without its stumbling blocks from the beginning. We solved 
 
     We got creative and made a function where all the individual images of each element of the explosion animation were taken, and then set them all to separate timeout functions each one tenth of a second after the other one before them. And voila! City hall implodes in a fiery explosion.
 
-##MVP (Minimum Viable Product)
+MVP (Minimum Viable Product)
 ---
 The MVP for this project was achieved relatively quickly once we got a general idea of the power and scope of the Leaflet API, which is quite extensive. 
 
@@ -71,7 +72,7 @@ Our first MVP iteration included:
 
 Since we got a working code base of these features done with days to go, we moved on to our stretch goals detailed below.  
 
-##Our Stretch Goals
+Our Stretch Goals
 ---
 We got to work on our stretch goals almost before the MVP was done, and they've evolved over time as we hit roadblocks along the way and got better acquainted with the intricacies of Leaflet.
 
@@ -88,18 +89,18 @@ Because we were ambitious, we even defined a third set of goals we dubbed the AV
 
 It's safe to say the plans for this game got bigger and grander as the week progressed.
 
-##Authors
+Authors
 ---
   * [Eric Ettensohn](https://github.com/ericettensohn)
   * [Paige Niedringhaus](https://github.com/paigen11/)
   * [David Pirie](https://github.com/PirieD704)
   * [JT Townsend](https://github.com/jttwnsnd)
 
-##Github Link
+Github Link
 ---
 [Github](https://github.com/paigen11/frontend-project)
 
-##Screenshots
+Screenshots
 ---
 Start game screen where rules are laid out for players and start button tempts them to play 
 ![alt text](https://github.com/paigen11/frontend-project/blob/master/screenshots/start-image.png 'start-image.png') 
@@ -113,7 +114,7 @@ As zombies head for the center, the danger counter climbs in the left hand side
 Game over screen and building explosion when the user's been overrun by zombies 
 ![alt text](https://github.com/paigen11/frontend-project/blob/master/screenshots/building-explosion.png 'buiding-explosion.png') 
  
-##Code Examples 
+Code Examples 
 --- 
 jQuery and JavaScript controlling the menu bar 
 ```javascript
